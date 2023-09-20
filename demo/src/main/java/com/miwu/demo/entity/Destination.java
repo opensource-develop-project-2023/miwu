@@ -40,8 +40,8 @@ public class Destination {
     // private String description;
 
     //순위
-    @Column(name = "ORDER", nullable = false, length = 100)
-    private int order;
+    @Column(name = "rank_number", nullable = false, length = 100)
+    private String rank_number;
 
     //광역시/도
     @Column(name = "ADRESS1", nullable = false, length = 45)
@@ -52,8 +52,8 @@ public class Destination {
     private String adress2;
 
     // 관광지명 (not null, varchar(45))
-    @Column(name = "NAME", nullable = false, length = 45)
-    private String name;
+    @Column(name = "dest_name", nullable = false, length = 45)
+    private String dest_name;
 
     //도로명주소
     @Column(name = "ROADADRESS", nullable = false, length = 200)
@@ -68,18 +68,18 @@ public class Destination {
     private String s_category;
 
     //검색건수
-    @Column(name = "SEARCH_NUMBER", nullable = false, length = 200)
-    private int seach_number;
+    @Column(name = "seach_number", nullable = false, length = 200)
+    private String seach_number;
 
     // 생성자
-    public Destination(int order, String adress1, String adress2, 
-    String name, String road_adress, String m_category, String s_category, int seach_number)
+    public Destination(String rank_number, String adress1, String adress2, 
+    String dest_name, String road_adress, String m_category, String s_category, String seach_number)
     {
 
-        this.order=order;
+        this.rank_number=rank_number;
         this.adress1=adress1;
         this.adress2=adress2;
-        this.name=name;
+        this.dest_name=dest_name;
         this.road_adress=road_adress;
         this.m_category=m_category;
         this.s_category=s_category;

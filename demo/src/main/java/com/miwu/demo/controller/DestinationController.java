@@ -6,8 +6,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
 // GetMapping
 import org.springframework.web.bind.annotation.GetMapping;
-// List
+
+import java.util.ArrayList;
 import java.util.List;
+import java.io.IOException;
+import com.opencsv.exceptions.CsvValidationException;
+
 // Destination Entity
 import com.miwu.demo.entity.Destination;
 // Destination Repository
@@ -19,12 +23,13 @@ public class DestinationController {
     final DestinationRepository destinationRepository;
 
     @GetMapping("/destination")
-    public List<Destination> listDestination() {
+    public List<Destination> listDestination() throws CsvValidationException, IOException{
         destinationRepository.deleteAllInBatch();
-        Destination dest1 = new Destination("망상해수욕장", "NULL", "NULL");
-        Destination dest2 = new Destination("망상해수욕장", "NULL", "NULL");
-        destinationRepository.save(dest1);
-        destinationRepository.save(dest2);
+        ArrayList <ArrayList> getCsvInfo =  CsvController.getCsv();
+        for(int i = 0; i < getCsvInfo.size();i++){
+            Destination dst = new Destination(getCsvInfo.get(i).get(0).toString(), getCsvInfo.get(i).get(1).toString(), getCsvInfo.get(i).get(2).toString(), getCsvInfo.get(i).get(3).toString(), getCsvInfo.get(i).get(4).toString(), getCsvInfo.get(i).get(5).toString(), getCsvInfo.get(i).get(6).toString(), getCsvInfo.get(i).get(7).toString());
+            destinationRepository.save(dst);
+        } 
         return destinationRepository.findAll();
     }
 }
