@@ -68,12 +68,12 @@ public class Destination {
     private String s_category;
 
     //검색건수
-    @Column(name = "seach_number", nullable = false, length = 200)
-    private String seach_number;
+    @Column(name = "SEARCH_NUMBER", nullable = false, length = 200)
+    private String search_number;
 
     // 생성자
     public Destination(String rank_number, String adress1, String adress2, 
-    String dest_name, String road_adress, String m_category, String s_category, String seach_number)
+    String dest_name, String road_adress, String m_category, String s_category, String search_number)
     {
 
         this.rank_number=rank_number;
@@ -83,7 +83,7 @@ public class Destination {
         this.road_adress=road_adress;
         this.m_category=m_category;
         this.s_category=s_category;
-        this.seach_number=seach_number;
+        this.search_number=search_number;
 
     }
 }
