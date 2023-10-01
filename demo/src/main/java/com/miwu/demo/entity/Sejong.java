@@ -19,9 +19,9 @@ import jakarta.persistence.Column; // 열 지정
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "destination")
+@Table(name = "sejong")
 @Entity
-public class Destination {
+public class Sejong {
     // 기본키 id
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // MySQL의 AUTO_INCREMENT를 사용
@@ -60,7 +60,7 @@ public class Destination {
     private String search_number;
 
     // 생성자
-    public Destination(String rank_number, String adress1, String adress2, 
+    public Sejong(String rank_number, String adress1, String adress2, 
     String dest_name, String road_adress, String m_category, String s_category, String search_number)
     {
         this.rank_number=rank_number;
@@ -73,17 +73,3 @@ public class Destination {
         this.search_number=search_number;
     }
 }
-
-
-
-// // 여행지명 (not null, varchar(45))
-    // @Column(name = "NAME", nullable = false, length = 45)
-    // private String name;
-
-    // // 이미지 url (not null, varchar(2000))
-    // @Column(name = "IMAGE_URL", nullable = false, length = 2000)
-    // private String image_url;
-
-    // // 설명 (not null, varchar(500))
-    // @Column(name = "Description", nullable = false, length = 500)
-    // private String description;
