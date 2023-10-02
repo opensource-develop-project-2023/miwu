@@ -98,32 +98,188 @@ li {
 
 // 레이아웃
 // -------------------------------------------------------
-body {
-  font-family: "Noto Sans KR";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+//Header -------------------------------------------------
+body{
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-between;
+  position: sticky;
+  background-color: white;
+  z-index: 100;
+  top: 0;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
 }
 
-header {
+
+.logo{
+  float: left;
+  margin-right: 20px;
+}
+
+.menu{
+  float: left;
+}
+.menu-item{
+float: left;
+margin-right: 40px;
+font-weight: bold;
+text-align :center;
+align-items: center;
+line-height: 48px;
+}
+
+.header__left {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header__center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  width: 276px;
+  height: auto;
+  left: 363px;
+  gap: 30px;
+
+}
+.menu-item > .MuiSvgIcon-root {
+  color: gray;
+
+}
+
+/* 마우스 가져다 댔을 때 색상 변경 시키기(hover) */
+.menu-item:hover > .MuiSvgIcon-root{
+  color: #2e81f4;
+}
+.menu-item:hover {
+  background-color: #eff2f5;
+  border-radius: 10px;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: none;
+}
+.header__input > input{
+  text-align : center;
+  width :300px;
+  height: 30px;
+
+}
+
+.header__input{
+  display: flex;
+  align-items: center;
+  font-size:15px;
+  width:300px;
+}
+
+//footer
+// -------------------------------------------------------
+.footer {
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-between;
   position: sticky;
+  background-color: black;
+  z-index: 100;
+  width: auto;
+  height: 160px;
+  top: 2474px;
 
-  padding: 16px 32px 16px 32px;
-  border-bottom: 1px solid;
+}
+.footer__input{
+  color:white;
+  font-size: 13px;
+  line-height: 10px;
+  
+}
 
+.footer__left {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  line-height: 40px;
+
+}
+
+.footer__input_1{
+  color:white;
+  font-size: 10px;
+  line-height: 10px;
+  
+
+}
+
+.footer__right {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+.footer_hr{
+  color: white;
+  margin-top: 0;
+
+  width: auto;
+  
+
+
+}
+
+
+//----------------------banner
+.main-bg {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-start;
+  
+  
 
-  text-align: left;
 }
 
-div.spot-list {
-  width: 100%;
-  overflow: auto; 
+.content_span_1 {
+  position :absolute;
+  left: 10%;
+  top: 26%;
+  color: white;
+  font-size: 30px;
+  font-weight : bold;
+
+
 }
 
-// -------------------------------------------------------
-
+.content_span_2 {
+  position :absolute;
+  left: 10%;
+  top: 30%;
+  color: white;
+  font-size: 50px;
+  font-weight : bold;
+}
+.my_btn {
+  width: 140px;
+  height: 40px;
+  font-size:20px;
+  color: white;
+  text-align: center;
+  background: black;
+  border-radius: 200px;
+  position :absolute;
+  left: 10%;
+  top: 40%;
+}
 
 // 테마별 여행지 목록
 // -------------------------------------------------------
@@ -176,4 +332,96 @@ p.description {
   font-size: 10px;
 }
 // -------------------------------------------------------
+///관광지 아이콘------------------------
+.info-icon{
+ width: 70px;
+ height: 70px;
+ border-radius: 70%;
+ display: block;
+ float:left;
+}
+.info-list{
+  display: flex;
+  padding: 20px 50px;
+  position: sticky;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-menu{
+  display: block;
+  margin-inline-start: 40px;
+  font-size: 10px;
+
+}
+
+.info-text{
+  font-size: 15px;
+  line-height: 2;
+  text-align: center;
+
+}
+.info-button{
+  width: 200px;
+  height: 40px;
+  font-size:14px;
+  color: black;
+  text-align: center;
+  background: white;
+  border-radius: 200px;
+  position :absolute;
+  border-color: black;
+  border-width: thin;
+ 
+}
+.info-btn{
+  display: flex;
+  padding: 30px 50px;
+  position: sticky;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+//------
+.search__input > input
+{
+  border: none;
+  background-color:transparent;
+  outline-width: 0;
+  text-align : center;
+  width :700px;
+  height: 30px;
+
+}
+.search__input{
+  display: flex;
+  align-items: center;
+  background-color: #2196F3;
+  padding: 10px;
+  margin-left:350px;
+  margin-right: 300px;
+  margin-top: 50px;
+  text-align : center;
+  font-size:18px;
+  width:800px;
+
+}
+
+
+.search__input > ::placeholder{
+  color: white;
+}
+
+.icon_list{
+  justify-content: space-between;
+  display: flex;
+  width :80px;
+
+  
+}
+
 
