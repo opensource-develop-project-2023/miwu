@@ -22,7 +22,7 @@ function Header() {
                     <div className="header__input">
                   
                     
-                    <input type="text" placeholder="어디로, 어떤 여행을 떠날 예정인가요?"/>
+                    <input className='input_text' type="text" placeholder="어디로, 어떤 여행을 떠날 예정인가요?"/>
                
                     
                     </div>
