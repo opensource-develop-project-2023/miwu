@@ -19,6 +19,8 @@ import com.miwu.demo.service.CsvService;
 
 // Destination Entity
 import com.miwu.demo.entity.Destination;
+// Img Entity
+import com.miwu.demo.entity.Img;
 
 // Destination Repository
 import com.miwu.demo.repository.DestinationRepository;
@@ -51,10 +53,9 @@ public class DestinationController {
                     getCsvInfo.get(i).get(5).toString(),
                     getCsvInfo.get(i).get(6).toString(),
                     getCsvInfo.get(i).get(7).toString());
+            dst.addImg(new Img("undefined"));
             destinationRepository.save(dst);
         }
-
         return destinationRepository.findAll();
     }
-
 }
