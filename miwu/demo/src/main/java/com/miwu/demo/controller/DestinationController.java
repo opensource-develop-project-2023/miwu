@@ -24,12 +24,13 @@ import com.miwu.demo.entity.Img;
 
 // Destination Repository
 import com.miwu.demo.repository.DestinationRepository;
+import com.miwu.demo.repository.ImgRepository;
 
 @RequiredArgsConstructor // 초기화 되지않은 final 변수에 대해 생성자를 생성
 @RestController
 public class DestinationController {
     final DestinationRepository destinationRepository;
-
+    final ImgRepository imgRepository;
     @Autowired
     private CsvService csvService;
 
@@ -38,7 +39,7 @@ public class DestinationController {
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
 
-        String csvPath = "demo/csv/";
+        String csvPath = "miwu/demo/csv/";
         String csvname = csvPath + location + ".csv";
 
         ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
@@ -53,7 +54,9 @@ public class DestinationController {
                     getCsvInfo.get(i).get(5).toString(),
                     getCsvInfo.get(i).get(6).toString(),
                     getCsvInfo.get(i).get(7).toString());
-            dst.addImg(new Img("undefined"));
+            Img img = new Img(getCsvInfo.get(i).get(3).toString(), "undeined");
+            dst.addImg(img);
+            dst.addImg(img);
             destinationRepository.save(dst);
         }
         return destinationRepository.findAll();

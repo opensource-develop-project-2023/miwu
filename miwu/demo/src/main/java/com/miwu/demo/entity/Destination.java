@@ -71,7 +71,7 @@ public class Destination {
     private String search_number;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "dest_name")
     private Collection<Img> img;
 
     // 생성자
