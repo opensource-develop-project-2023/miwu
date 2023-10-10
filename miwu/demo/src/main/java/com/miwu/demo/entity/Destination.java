@@ -12,7 +12,8 @@ import jakarta.persistence.Entity; // 데이터베이스 테이블과 매핑되�
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id; // 엔터티의 기본 키를 지정
 import jakarta.persistence.JoinColumn;
-
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapKey;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue; // 기본 키 값에 대한 생성자 제공
 import jakarta.persistence.GenerationType; // 기본 키 값에 대한 생성 타입
@@ -71,8 +72,8 @@ public class Destination {
     private String search_number;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "dest_name")
-    private Collection<Img> img;
+    @JoinColumn(name = "dest_name", insertable = false, updatable = false)
+    private List<Img> img;
 
     // 생성자
     public Destination(String rank_number, String adress1, String adress2,

@@ -17,6 +17,9 @@ import com.opencsv.exceptions.CsvValidationException;
 // CsvService 
 import com.miwu.demo.service.CsvService;
 
+// CrawlingService
+import com.miwu.demo.service.CrawlingService;
+
 // Destination Entity
 import com.miwu.demo.entity.Destination;
 // Img Entity
@@ -31,13 +34,18 @@ import com.miwu.demo.repository.ImgRepository;
 public class DestinationController {
     final DestinationRepository destinationRepository;
     final ImgRepository imgRepository;
+
     @Autowired
     private CsvService csvService;
+
+    @Autowired
+    private CrawlingService crawlingService;
 
     @GetMapping("/destination/{location}")
     public List<Destination> listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
+        imgRepository.deleteAllInBatch();
 
         String csvPath = "miwu/demo/csv/";
         String csvname = csvPath + location + ".csv";
@@ -54,11 +62,31 @@ public class DestinationController {
                     getCsvInfo.get(i).get(5).toString(),
                     getCsvInfo.get(i).get(6).toString(),
                     getCsvInfo.get(i).get(7).toString());
-            Img img = new Img(getCsvInfo.get(i).get(3).toString(), "undeined");
-            dst.addImg(img);
-            dst.addImg(img);
+
+            String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+            List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
+            if (urlsInfo.size() >= 5) {
+                System.out.println("이미지 개수: " + urlsInfo.size());
+                Img imgUrl = new Img(tmpDstNm,
+                        urlsInfo.get(0),
+                        urlsInfo.get(1),
+                        urlsInfo.get(2),
+                        urlsInfo.get(3),
+                        urlsInfo.get(4));
+                dst.addImg(imgUrl);
+            }
+
             destinationRepository.save(dst);
         }
         return destinationRepository.findAll();
     }
 }
+
+
+
+
+
+
+
+
+

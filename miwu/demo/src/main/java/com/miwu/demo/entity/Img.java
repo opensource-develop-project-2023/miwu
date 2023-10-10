@@ -28,17 +28,34 @@ public class Img {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // MySQL의 AUTO_INCREMENT를 사용
     private Long id;
 
-    // 여행지명
-    @Column(name = "dest_name", nullable = false, length = 100)
-    private String dest_name;
+    // 이미지 url
+    @Column(name = "url1", nullable = false, length = 2083)
+    private String url1;
 
     // 이미지 url
-    @Column(name = "url", nullable = false, length = 100)
-    private String url;
+    @Column(name = "url2", nullable = false, length = 2083)
+    private String url2;
+    // 이미지 url
+    @Column(name = "url3", nullable = false, length = 2083)
+    private String url3;
+    // 이미지 url
+    @Column(name = "url4", nullable = false, length = 2083)
+    private String url4;
+
+    @Column(name = "url5", nullable = false, length = 2083)
+    private String url5;
+
+    // 관광지명
+    @Column(name = "dest_name", nullable = false, length = 45)
+    private String dest_name;
 
     // 생성자
-    public Img(String dest_name, String url) {
+    public Img(String dest_name, String url1, String url2, String url3, String url4, String url5) {
         this.dest_name = dest_name;
-        this.url = url;
+        this.url1 = url1;
+        this.url2 = url2;
+        this.url3 = url3;
+        this.url4 = url4;
+        this.url5 = url5;
     }
 }
