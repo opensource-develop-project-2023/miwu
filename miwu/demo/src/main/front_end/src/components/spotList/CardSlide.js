@@ -1,3 +1,4 @@
+/*/
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
 
@@ -13,4 +14,4 @@ const CardSlide = (props) => {
     );    
 };
 
-export default CardSlide;
+export default CardSlide; /*/

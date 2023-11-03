@@ -20,7 +20,6 @@
 
 // @Service
 // public class RestaurantService {
-
 // public static final String baseUrl =
 // "https://m.map.naver.com/search2/search.nhn?&query="; // 임시
 // // public static final String basePath = "/Users/rla/Downloads/";
