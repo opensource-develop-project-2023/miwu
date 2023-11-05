@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './scss/App.scss';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Map } from 'react-kakao-maps-sdk';
+
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
@@ -25,6 +27,11 @@ function App() {
         setUserId("");
     }
 
+    const [I, setI] = useState(0);
+    function plus() {
+        setI(I + 1);
+    }
+
     return ( 
         <div className="App">
             <BrowserRouter>
@@ -38,6 +45,12 @@ function App() {
                     <Route path="/local" element={<Local />} />
                     <Route path="*" element={<Navigate replace to="/" />} /> 
                 </Routes>
+                <Map 
+                    center={{ lat: 33.5563, lng: 126.79581 }}   // 지도의 중심 좌표
+                    style={{ width: '800px', height: '600px' }} // 지도 크기
+                    level={3}                                   // 지도 확대 레벨
+                >
+                </Map>
             </BrowserRouter>
             <Footer />
         </div>
