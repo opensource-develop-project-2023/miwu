@@ -1,58 +1,35 @@
-// package com.miwu.demo.service;
+package com.miwu.demo.service;
 
-// import java.io.IOException;
-// import java.util.ArrayList;
-// import java.util.regex.Matcher;
-// import java.util.regex.Pattern;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-// import org.jsoup.Connection;
-// import org.jsoup.Jsoup;
-// import org.jsoup.nodes.Document;
-// import org.jsoup.nodes.Element;
-// import org.jsoup.select.Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
-// import org.springframework.stereotype.Service;
-// import com.opencsv.exceptions.CsvValidationException;
 
-// /* 1. DB에서 관광지명 가져와서 검색어에 넣는거
-// 2. 키값 별로 분류하기
-// */
+public class RestaurantService {
+    // public static final String baseUrl = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearch&query=" + "지역명" + "+맛집&tqi=iRVh%2BdqVOsCssgtbvihssssssaG-244791";
+    // public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
+	// public static final String WEB_DRIVER_PATH = "/Users/byul/Downloads/chromedriver-mac-arm64/chromedriver";
 
-// @Service
-// public class RestaurantService {
-// public static final String baseUrl =
-// "https://m.map.naver.com/search2/search.nhn?&query="; // 임시
-// // public static final String basePath = "/Users/rla/Downloads/";
+    // public static void main(String[] args) {
+    //     // 크롬 드라이버 설정
+    //     System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
-// public ArrayList<ArrayList<String>> restaraunt_list(String restaurant_name)
-// throws CsvValidationException, IOException {
-// Connection conn = Jsoup.connect(baseUrl + restaurant_name + " 맛집");
+    //     // 크롬 옵션 설정
+    //     ChromeOptions options = new ChromeOptions();
+    //     options.addArguments("--headless");
+    //     options.addArguments("--no-sandbox");
+    //     WebDriver driver = new ChromeDriver(options);
 
-// try {
-// Document document = conn.get();
-// Elements scripts = document.getElementsByTag("script");
-// String a = null;
+    //     // 네이버 플레이스 검색 페이지 접속
+    //     driver.get("주소");
+    // }
 
-// // System.out.println(document.html());
-
-// for (Element element : scripts) {
-// if (element.data().contains("var searchResult")) {
-// Pattern pattern = Pattern.compile(".*var searchResult = ([^;]*);");
-// Matcher matcher = pattern.matcher(element.data());
-
-// if (matcher.find()) {
-// a = matcher.group(1);
-// System.out.println(a); // a를 출력하면 받아온거 나옴
-// break;
-// } else {
-// System.err.println("No match found!");
-// }
-// break;
-// }
-// }
-
-// } catch (IOException e) {
-// e.printStackTrace();
-// }
-// }
-// }
+}

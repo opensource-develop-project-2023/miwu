@@ -35,27 +35,25 @@ public class Img {
     // 이미지 url
     @Column(name = "url2", nullable = false, length = 2083)
     private String url2;
+
     // 이미지 url
     @Column(name = "url3", nullable = false, length = 2083)
     private String url3;
-    // 이미지 url
-    @Column(name = "url4", nullable = false, length = 2083)
-    private String url4;
-
-    @Column(name = "url5", nullable = false, length = 2083)
-    private String url5;
 
     // 관광지명
     @Column(name = "dest_name", nullable = false, length = 45)
     private String dest_name;
 
+    // 관광지 tag
+    @Column(name = "tag", nullable = false, length = 2083)
+    private String tag;
+
     // 생성자
-    public Img(String dest_name, String url1, String url2, String url3, String url4, String url5) {
+    public Img(String dest_name, String url1, String url2, String url3, String tag) {
         this.dest_name = dest_name;
         this.url1 = url1;
         this.url2 = url2;
         this.url3 = url3;
-        this.url4 = url4;
-        this.url5 = url5;
+        this.tag = tag;
     }
 }
