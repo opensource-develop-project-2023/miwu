@@ -24,7 +24,7 @@ import org.springframework.stereotype.Service;
 public class CrawlingService {
 
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-	public static final String WEB_DRIVER_PATH = "/Users/byul/Downloads/chromedriver-mac-arm64/chromedriver";
+    public static final String WEB_DRIVER_PATH = "/Users/byul/Downloads/chromedriver-mac-arm64/chromedriver";
 
     public List<String> getImg(String imgName) throws IOException {
         // 크롬 드라이버 설정
@@ -46,28 +46,27 @@ public class CrawlingService {
             tagInfo = "";
         }
 
-        
-
         // 구글 이미지
-        String baseUrl = "https://www.google.com/search?q=" + imgName + "&tbm=isch&tbs=isz:l&rlz=1C5CHFA_enKR970KR970&hl=ko&sa=X&ved=0CAIQpwVqFwoTCPiMtuqVoIIDFQAAAAAdAAAAABAD&biw=1288&bih=664";
+        String baseUrl = "https://www.google.com/search?q=" + imgName
+                + "&tbm=isch&tbs=isz:l&rlz=1C5CHFA_enKR970KR970&hl=ko&sa=X&ved=0CAIQpwVqFwoTCPiMtuqVoIIDFQAAAAAdAAAAABAD&biw=1288&bih=664";
 
         Document rawData = Jsoup.connect(baseUrl).get();
-        Elements imgs = rawData.select("img[class=rg_i Q4LuWd]");    //구글 class id
+        Elements imgs = rawData.select("img[class=rg_i Q4LuWd]"); // 구글 class id
 
         List<String> imageUrls = new ArrayList<>();
 
         if (imgs.size() >= 5) {
             int page = 0;
             for (Element img : imgs) {
-                String url = img.attr("abs:data-src");  // 구글 
-                
+                String url = img.attr("abs:data-src"); // 구글
+
                 if (url != "" && url != null) {
                     page++;
                     imageUrls.add(url);
                 }
                 if (page == 3)
                     break;
-            }   
+            }
         }
         imageUrls.add(tagInfo);
         System.out.println(imgName + " 이미지 검색 완료");

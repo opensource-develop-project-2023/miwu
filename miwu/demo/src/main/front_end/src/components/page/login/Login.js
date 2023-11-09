@@ -1,6 +1,7 @@
 import React, { component,useState, memo } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
 
+import "./Login.scss";
 const Login = ({login}) => {
     const [Id, setId] = useState("");
     const [Pw, setPw] = useState("");
@@ -30,8 +31,7 @@ const Login = ({login}) => {
     }
     
     return (
-        
-        <form onSubmit={onSubmitHandler}>
+        <form id="login" onSubmit={onSubmitHandler}>
             <div>
                 <label>아이디</label>
                 <input 
