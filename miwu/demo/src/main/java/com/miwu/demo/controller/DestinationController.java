@@ -20,20 +20,27 @@ import com.miwu.demo.service.CsvService;
 // CrawlingService
 import com.miwu.demo.service.CrawlingService;
 
+// RestaurantService
+import com.miwu.demo.service.RestaurantService;
+
 // Destination Entity
 import com.miwu.demo.entity.Destination;
 // Img Entity
 import com.miwu.demo.entity.Img;
+// Restaurant Entity
+import com.miwu.demo.entity.Restaurant;
 
 // Destination Repository
 import com.miwu.demo.repository.DestinationRepository;
 import com.miwu.demo.repository.ImgRepository;
+import com.miwu.demo.repository.RestaurantRepository;
 
 @RequiredArgsConstructor // 초기화 되지않은 final 변수에 대해 생성자를 생성
 @RestController
 public class DestinationController {
     final DestinationRepository destinationRepository;
     final ImgRepository imgRepository;
+    final RestaurantRepository restaurantRepository;
 
     @Autowired
     private CsvService csvService;
@@ -41,11 +48,15 @@ public class DestinationController {
     @Autowired
     private CrawlingService crawlingService;
 
+    @Autowired
+    private RestaurantService restaurantService;
+
     @GetMapping("/destination/{location}")
     public List<Destination> listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
         imgRepository.deleteAllInBatch();
+        restaurantRepository.deleteAllInBatch();
 
         String csvPath = "miwu/demo/csv/";
         String csvname = csvPath + location + ".csv";

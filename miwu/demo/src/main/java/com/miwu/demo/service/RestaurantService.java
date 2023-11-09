@@ -17,100 +17,90 @@ import org.springframework.stereotype.Service;
 
 /*해야할 일
  1. 이름, 주소 등 가가 동적할당 되있는데 이거 리턴할 때 하나만 리턴할 수 있어서 방법 찾아야함
+ ㄴ 방법은 찾아서 해놓음
  */
 @Service
 public class RestaurantService {
 
-    // public static final String baseUrl = "https://m.map.naver.com/search2/search.naver?query=";
-    // public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-	// public static final String WEB_DRIVER_PATH = "/Users/rla/Desktop/chromedriver-win64/chromedriver-win64/chromedriver.exe";
+    public static final String baseUrl = "https://m.map.naver.com/search2/search.naver?query=";
+    public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
+	public static final String WEB_DRIVER_PATH = "/Users/rla/Desktop/chromedriver-win64/chromedriver-win64/chromedriver.exe";
 
-    // public List<String> getRestaurant(String restaurantName) throws IOException{
-    //     // 크롬 드라이버 설정
-    //     System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
+    public List<String> getRestaurant(String restaurantName) throws IOException{
+        // 크롬 드라이버 설정
+        System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
 
-    //     // 크롬 옵션 설정
-    //     ChromeOptions options = new ChromeOptions();
-    //     options.addArguments("--headless");
-    //     options.addArguments("--no-sandbox");
+        // 크롬 옵션 설정
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
 
-    //     options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
+        options.setPageLoadStrategy(PageLoadStrategy.NORMAL);
 
-    //     // 보안 설정추가
-    //     options.addArguments("--remote-allow-origins=*");
+        // 보안 설정추가
+        options.addArguments("--remote-allow-origins=*");
 
-    //     WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(options);
 
-    //     // 네이버 모바일 지도 검색 페이지 접속
-    //     driver.get(baseUrl+restaurantName);
+        // 네이버 모바일 지도 검색 페이지 접속
+        driver.get(baseUrl+restaurantName+"%20맛집");
 
-    //     // 끝까지 스크롤 다운
-    //     JavascriptExecutor jse = (JavascriptExecutor)driver;
+        // 끝까지 스크롤 다운
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
 
-    //     String name; // 음식점 이름
-    //     String adress1;
-    //     String adress_last; // 주소
-    //     String category; // 분류
-    //     String imgUrl; // 이미지
+        String name; // 음식점 이름
+        String adress1;
+        String adress_last; // 주소
+        String category; // 분류
+        String imgUrl; // 이미지
         
-    //     // 크롤링한 데이터 담아두는 배열
-    //     List<String> r_name = new ArrayList<>();
-    //     List<String> r_adress1 = new ArrayList<>();
-    //     List<String> r_category = new ArrayList<>();
-    //     List<String> r_imgUrl = new ArrayList<>();
+        // 크롤링한 데이터 담아두는 배열
+        // List<String> r_name = new ArrayList<>();
+        // List<String> r_adress1 = new ArrayList<>();
+        // List<String> r_category = new ArrayList<>();
+        // List<String> r_imgUrl = new ArrayList<>();
+        List<String> resList = new ArrayList<>();
         
         
         
-    //     //음식점 50개 크롤링
-    //     for(int i=1; i<=50;i++){
-    //         try {
-    //             name=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[2]/div/strong")).getText();
-    //             adress1=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/div[1]/div/a")).getText();
-    //             adress_last=adress1.substring(5); // '주소보기' 문자열 지움
-    //             category=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[2]/div/em")).getText();
-    //             imgUrl=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[1]/img")).getAttribute("src");
+        //음식점 50개 크롤링
+        for(int i=1; i<=50;i++){
+            try {
+                name=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[2]/div/strong")).getText();
+                adress1=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/div[1]/div/a")).getText();
+                adress_last=adress1.substring(5); // '주소보기' 문자열 지움
+                category=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[2]/div/em")).getText();
+                imgUrl=driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li["+i+"]/div[1]/a[1]/img")).getAttribute("src");
 
-    //             // 끝까지 스크롤 다운
-    //             jse.executeScript("window.scrollBy(0, document.body.scrollHeight)");
-                
-    //             // Test용
-    //             // System.out.println("음식점 이름: "+name);
-    //             // System.out.println("주소: "+adress_last);
-    //             // System.out.println("분류: "+category);
-    //             // System.out.println("이미지: "+imgUrl);
-    //             // System.out.println("-------------------------------------");
+                // 끝까지 스크롤 다운
+                jse.executeScript("window.scrollBy(0, document.body.scrollHeight)");
 
-    //             r_name.add(name);
-    //             r_adress1.add(adress_last);
-    //             r_category.add(category);
-    //             r_imgUrl.add(imgUrl);
+                // r_name.add(name);
+                // r_adress1.add(adress_last);
+                // r_category.add(category);
+                // r_imgUrl.add(imgUrl);
+                resList.add(name);
+                resList.add(adress_last);
+                resList.add(category);
+                resList.add(imgUrl);
 
 
-    //         } catch (Exception e) {
-    //             name="";
-    //             adress1="";
-    //             category="";
-    //             imgUrl="";
-    //         }
-    //     }
+            } catch (Exception e) {
+                name="";
+                adress1="";
+                category="";
+                imgUrl="";
+            }
+        }
 
-    //     //일단 전체 리스트를 2차원 배열로 만듬
-    //     // r_list.add(r_name);
-    //     // r_list.add(r_adress1);
-    //     // r_list.add(r_category);
-    //     // r_list.add(r_imgUrl);
+        // Test용
+        // for(int i=0;i<resList.size(); i++){
+        //     System.out.println(resList.get(i));
+        // }
+        System.out.println(restaurantName+"맛집 크롤링 완료");
+        driver.close();
 
-    //     // Test용
-    //     for(int i=0;i<r_name.size(); i++){
-    //         System.out.println(r_name.get(i));
-    //         System.out.println(r_adress1.get(i));
-    //         System.out.println(r_category.get(i));
-    //         System.out.println(r_imgUrl.get(i));
-    //         System.out.println("-------------------------------------");
-    //     }
-    //     driver.close();
-
-    //     return;
-    // }
+        return resList;
+    }
 
 }
