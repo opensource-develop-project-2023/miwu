@@ -91,12 +91,3 @@ public class DestinationController {
         return destinationRepository.findAll();
     }
 }
-
-
-
-
-
-
-
-
-

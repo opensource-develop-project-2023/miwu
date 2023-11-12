@@ -22,15 +22,15 @@ const Register = () => {
     const [pw, setPw] = useState("");
     const [name, setName] = useState("");
     
-    const onIdHandler = (event) => {
+    const updateId = (event) => {
         setId(event.currentTarget.value);
     } // 아이디 값이 변경되면, 상태값도 업데이트함
 
-    const onPwHandler = (event) => {
+    const updatePw = (event) => {
         setPw(event.currentTarget.value);
     } // 비밀번호 값이 변경되면, 상태값도 업데이트함
 
-    const onNameHandler = (event) => {
+    const updateName = (event) => {
         setName(event.currentTarget.value);
     } // 이름 값이 변경되면, 상태값도 업데이트함
 
@@ -41,8 +41,9 @@ const Register = () => {
             "text", 
             "user_id", 
             "예: miwu0928",
-            {onIdHandler},
-            "소문자, 대문자, 숫자로 10자 이하"
+            updateId,
+            "소문자, 대문자, 숫자로 10자 이하",
+            ""
         ),
         new Info(
             1,
@@ -50,8 +51,9 @@ const Register = () => {
             "password", 
             "password", 
             "비밀번호를 입력해주세요",
-            {onPwHandler},
-            "소문자, 대문자, 숫자, 특수문자로 6자 이상 20자 이하"
+            updatePw,
+            "소문자, 대문자, 숫자, 특수문자로 6자 이상 20자 이하",
+            ""
         ),
         new Info(
             2,
@@ -59,8 +61,9 @@ const Register = () => {
             "text", 
             "name", 
             "사용자님의 이름을 입력해주세요",
-            {onNameHandler},
+            updateName,
             "",
+            ""
         ),
     ];
 
@@ -71,11 +74,13 @@ const Register = () => {
             type={info.type} 
             name={info.name} 
             placeholder={info.placeholder}
+            handler={info.handler}
             condition={info.condition}
+            notice={info.notice}
         />
     ));
     
-    const onSubmit = async (event) => { // 회원가입 버튼 눌렀을 때 실행되는 함수
+    const onSubmit = (event) => { // 회원가입 버튼 눌렀을 때 실행되는 함수
         event.preventDefault();
         
         // /api/register = http://localhost:8080/register
@@ -92,6 +97,9 @@ const Register = () => {
                 }
             }
         )
+        .then((response) => {
+            console.log(response);  
+        })
         .catch((error) => { // 실패했을 경우 에러 출력
             console.log(error);
         })

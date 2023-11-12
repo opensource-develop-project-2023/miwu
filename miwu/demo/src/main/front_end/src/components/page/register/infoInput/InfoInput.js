@@ -4,12 +4,15 @@ import { FaEye, FaEyeSlash } from "react-icons/fa" ;
 import "./InfoInput.scss"
 
 const InfoInput = (props) => {    
+    const [childState, setChildState] = useState();
+
     const [hidePw, setHidePw] = useState(true); // 비밀번호 숨김 상태
     
     const toggleHidePw = (boolean) => { // 비밀번호 숨김 버튼 토글
         setHidePw(boolean);
     }
-
+    
+    
     return (
         <div key={props.id} className="info-input">
             {/* 입력해야 되는 종류와, 입력 조건 만족하였는지 안내 */}
@@ -20,9 +23,8 @@ const InfoInput = (props) => {
                     type={props.type} 
                     name={props.name}
                     placeholder={props.placeholder}
-                    onChange={props.handler}
-                /> 
-
+                    onChange={(event) => props.handler(event)}
+                />
                 {/* 아이디를 입력받는 곳이면, 중복 체크 버튼 생성 */}
                 {/* 중복체크 기능 연결 예정 */}
                 {
