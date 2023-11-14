@@ -603,16 +603,13 @@ object-fit: fill;
   text-align: left;
   -webkit-text-stroke-width: 1px;
 }
-<<<<<<<<< Temporary merge branch 1
-=========
-
 
 .capital-area{
   width: 270px;
-height: 400px;
-margin-left: 73px;
-display: block;
-object-fit: fill;
+  height: 400px;
+  margin-left: 73px;
+  display: block;
+  object-fit: fill;
 }
 
 .capital-area img{
@@ -633,6 +630,7 @@ object-fit: fill;
   text-align: left;
   -webkit-text-stroke-width: 1px;
 }
+
 .gyeongsang {
   width: 270px;
   height: 400px;
@@ -648,6 +646,7 @@ object-fit: fill;
   position :relative;
   border-radius: 30px;
 }
+
 .gyeongsang span {
   position :absolute;
   top: 2050px;
@@ -699,20 +698,20 @@ object-fit: fill;
   display: flex;
   flex-direction: column;
 }
->>>>>>>>> Temporary merge branch 2
+
 
 //--------------------------------------------------------
 //지역목록
 .area{
-width: 1200px;
-height: 500px;
-top: 456px;
-padding: 0px, 38px, 80px, 38px;
-gap: 40px;
-flex-direction: column;
-display: flex;
-
+  width: 1200px;
+  height: 500px;
+  top: 456px;
+  padding: 0px, 38px, 80px, 38px;
+  gap: 40px;
+  flex-direction: column;
+  display: flex;
 }
+
 .area-list{
   margin-left: 150px;
   font-size: 10px;
@@ -720,13 +719,14 @@ display: flex;
   text-align: left;
   -webkit-text-stroke-width: 1px;
   margin-top: 50px;
-flex-direction: column;
+  flex-direction: column;
 }
 .area-list p{
   font-size: 25px;
   color:gray;
   flex-direction: column;
 }
+
 .area-header{
   margin-top: 100px;
   font-size: 25px;
@@ -734,5 +734,5 @@ flex-direction: column;
   text-align: center;
   -webkit-text-stroke-width: 1px;
   position: relative;
-  }
+}
 
