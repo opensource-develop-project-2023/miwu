@@ -9,20 +9,10 @@ import lombok.NoArgsConstructor; // 파라미터가 없는 기본 생성자(id)�
 // jakarta
 import jakarta.persistence.Table; // 테이블 지정
 import jakarta.persistence.Entity; // 데이터베이스 테이블과 매핑되는 클래스
-import jakarta.persistence.FetchType;
 import jakarta.persistence.Id; // 엔터티의 기본 키를 지정
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.MapKey;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue; // 기본 키 값에 대한 생성자 제공
 import jakarta.persistence.GenerationType; // 기본 키 값에 대한 생성 타입
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collection;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column; // 열 지정
 
 // 여행지 테이블
@@ -43,18 +33,18 @@ public class UserInfo {
     @Column(name = "user_id", nullable = false, length = 100)
     private String user_id;
 
-    // 유저 email
-    @Column(name = "email", nullable = false, length = 100)
-    private String email;
+    // 유저 name
+    @Column(name = "user_name", nullable = false, length = 100)
+    private String user_name;
 
     // 패스워드
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
     // 생성자
-    public UserInfo(String user_id, String password) {
+    public UserInfo(String user_id, String password, String user_name) {
         this.user_id = user_id;
-        this.email = email;
+        this.user_name = user_name;
         this.password = password;
     }
 }
