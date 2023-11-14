@@ -42,8 +42,7 @@ public class RestaurantController {
 
         for(int k=0; k<17; k++){
             
-            //아직 미완성
-            // 맛집 정보(다른 테이블에다 만들어야됨), r_tmpAdr은 지역명임(adress1)
+            // 맛집 정보(다른 테이블), r_tmpAdr은 지역명임(adress1)
             String r_tmpAdr=adress_list[k]; //adress_list 의 지역명 가져옴
 
             // r_tmpAdr 이 RestaurantService로 매개변수(restaurantName) 보내주는 역할
