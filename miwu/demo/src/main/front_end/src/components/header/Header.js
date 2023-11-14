@@ -30,14 +30,15 @@ function Header({loggedIn, id}) {
             </div>
             <div className="search-bar">
                 <div className="divider">
-                    <input type="text" placeholder="어디로,어떤 여행을 떠날 예정인가요?"/>
-                    <GoSearch className='search-icon' />
-                </div>
-            </div>
-            <Link to={loggedIn ? "/myPage" : "/login"}>
-                <FaUser className="user-icon" />
+                   
+                    <Link to={loggedIn ? "/myPage" : "/login"}>
+               
                 <p>{loggedIn ? id : "로그인"}</p>
             </Link>
+                
+                </div>
+            </div>
+           
         </div>
     );
 };
