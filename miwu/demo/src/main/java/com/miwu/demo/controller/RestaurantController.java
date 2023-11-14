@@ -32,7 +32,7 @@ public class RestaurantController {
     private RestaurantService restaurantService;
 
     @GetMapping("/restaurant")
-    public List<Restaurant> listDestination()
+    public List<Restaurant> listRestaurants()
             throws IOException {
         
         restaurantRepository.deleteAllInBatch();
