@@ -1,0 +1,50 @@
+.hint-select {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.hint-select p {
+    font-size: 12px;
+}
+
+.hint-select select {
+    padding: 8px;
+}
+
+.hint-select input {
+    padding: 8px;
+}
+
+.lab {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+// 질문
+// -------------------------------------------------------
+.query {
+    margin-bottom: 16px;
+}
+
+.query select {
+    width: calc(100% - 44px);
+}
+
+.query label {
+    margin-right: 12px;
+}
+// -------------------------------------------------------
+
+// 질문
+// -------------------------------------------------------
+.answer label {
+    margin-right: 12px;
+}
+
+.answer input {
+    width: calc(100% - 44px);
+}
+// -------------------------------------------------------
