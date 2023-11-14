@@ -28,17 +28,11 @@ function Header({loggedIn, id}) {
                     </Link>
                 </div>
             </div>
-            <div className="search-bar">
-                <div className="divider">
-                   
-                    <Link to={loggedIn ? "/myPage" : "/login"}>
-               
+          
+            <Link to={loggedIn ? "/myPage" : "/login"}>
+                <FaUser className="user-icon" />
                 <p>{loggedIn ? id : "로그인"}</p>
             </Link>
-                
-                </div>
-            </div>
-           
         </div>
     );
 };

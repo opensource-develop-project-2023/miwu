@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './scss/App.scss';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Map } from 'react-kakao-maps-sdk';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -11,12 +12,9 @@ import Register from './components/page/register/register/Register';
 import MyPage from './components/page/myPage/MyPage';
 import Local from './components/page/Local';
 import Theme from './components/page/Theme';
-
-import axios from 'axios';
+import Seoul from './components/area/Seoul';
 
 function App() {
-    const [text, setText] = useState("");
-
     const [LoggedIn, setLoggedIn] = useState(false);
     const [UserId, setUserId] = useState("");
     
@@ -47,7 +45,9 @@ function App() {
                     <Route path="/theme" element={<Theme />} />
                     <Route path="/local" element={<Local />} />
                     <Route path="*" element={<Navigate replace to="/" />} /> 
+                    <Route path="/seoul" element={<Seoul />} />
                 </Routes>
+        
             </BrowserRouter>
             <Footer />
         </div>
