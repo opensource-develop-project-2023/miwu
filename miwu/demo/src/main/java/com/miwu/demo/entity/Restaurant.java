@@ -29,8 +29,8 @@ public class Restaurant {
     private Long id;
 
     // 광역시/도
-    @Column(name = "r_adress1", nullable = false, length = 45)
-    private String r_adress1;
+    @Column(name = "adress1", nullable = false, length = 45)
+    private String adress1;
 
     // 맛집 이름
     @Column(name = "r_name", nullable = false, length = 2083)
@@ -49,8 +49,8 @@ public class Restaurant {
     private String r_imgUrl;
 
     // 생성자
-    public Restaurant(String r_adress1, String r_name, String r_adress, String r_category, String r_imgUrl) {
-        this.r_adress1 = r_adress1;
+    public Restaurant(String adress1, String r_name, String r_adress, String r_category, String r_imgUrl) {
+        this.adress1 = adress1;
         this.r_name = r_name;
         this.r_adress = r_adress;
         this.r_category = r_category;
