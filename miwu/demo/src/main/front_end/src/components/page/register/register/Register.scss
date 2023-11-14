@@ -1,6 +1,18 @@
 #register {
     display: flex;
     flex-direction: column;
-    margin: 0px 130px 0px 130px;
+    margin: 0px 130px 60px 130px;
 }
 
+.lab {
+    display: flex;
+    justify-content: space-between;
+
+}
+.invalid {
+    color: red;
+}
+
+.valid {
+    color: green; 
+}
