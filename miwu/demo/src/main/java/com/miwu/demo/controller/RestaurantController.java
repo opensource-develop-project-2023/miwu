@@ -2,14 +2,14 @@ package com.miwu.demo.controller;
 
 // RequiredArgsConstructor
 import lombok.RequiredArgsConstructor;
+
 // RestController
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
+
 // GetMapping
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.io.IOException;
 
@@ -32,7 +32,7 @@ public class RestaurantController {
     private RestaurantService restaurantService;
 
     @GetMapping("/restaurant")
-    public List<Restaurant> listDestination()
+    public List<Restaurant> listRestaurants()
             throws IOException {
         
         restaurantRepository.deleteAllInBatch();
@@ -42,8 +42,7 @@ public class RestaurantController {
 
         for(int k=0; k<17; k++){
             
-            //아직 미완성
-            // 맛집 정보(다른 테이블에다 만들어야됨), r_tmpAdr은 지역명임(adress1)
+            // 맛집 정보(다른 테이블), r_tmpAdr은 지역명임(adress1)
             String r_tmpAdr=adress_list[k]; //adress_list 의 지역명 가져옴
 
             // r_tmpAdr 이 RestaurantService로 매개변수(restaurantName) 보내주는 역할
