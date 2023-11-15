@@ -41,5 +41,7 @@ public class RegisterController {
         userInfoRepository.save(userInfo);
 
         return userInfoRepository.findAll();
+
+        // git push test
     }
 }
