@@ -127,7 +127,7 @@ li {
   padding: 15px 20px;
   justify-content: space-between;
   background-color: white;
-  width :1300px;
+  width :1200px;
   height: 96px;
   border: 0px, 0px, 1px, 0px;
   box-shadow: 0px 13px 28px 0px rgba(0, 0, 0, 0.1);
@@ -226,7 +226,7 @@ margin-left: 35px;
   justify-content: space-between;
   position: sticky;
   background-color: black;
-  width: 1300px;
+  width: 1200px;
   height: 316px;
   top: 1776px;
   padding: 20px, 0px, 20px, 0px;
@@ -387,11 +387,10 @@ margin-top: 10px;
 }
 //----------------------banner
 .main-banner{
-width: 1300px;
+width: 1200px;
 height: 320px;
 top: 96px;
 box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-
 
 }
 
@@ -562,15 +561,17 @@ margin-top: 20px;
 //--------------------
 
  .spotlist{
-width: 1300px;
-height: 2900px;
+width: 1200px;
+height: 2500px;
 top: 456px;
+padding: 0px, 38px, 80px, 38px;
 flex-direction: column;
 display: flex;
  }
 
  .slider{
-  margin-left: 70px;
+  margin-left: 72px;
+  margin-top: 20px;
   display: flex;
   margin-top:0px;
   
@@ -578,12 +579,11 @@ display: flex;
 
 
 .chungcheong{
-  width: 200px;
-height: 300px;
-margin-left: 33px;
+width: 270px;
+height: 400px;
+margin-left: 73px;
 display: block;
 object-fit: fill;
-
 
 }
 .chungcheong img{
@@ -595,8 +595,8 @@ object-fit: fill;
 }
 .chungcheong span{
   position :absolute;
-  top: 1350px;
-  margin-left: 140px;
+  top: 1550px;
+  margin-left: 200px;
   color: white;
   font-size: 23px;
   letter-spacing: 0em;
@@ -606,9 +606,9 @@ object-fit: fill;
 
 
 .capital-area{
-  width: 200px;
-height: 300px;
-margin-left: 33px;
+  width: 270px;
+height: 400px;
+margin-left: 73px;
 display: block;
 object-fit: fill;
 }
@@ -623,8 +623,8 @@ object-fit: fill;
 
 .capital-area span {
   position :absolute;
-  top: 950px;
-  margin-left: 140px;
+  top: 1050px;
+  margin-left: 200px;
   color: white;
   font-size: 23px;
   letter-spacing: 0em;
@@ -632,12 +632,11 @@ object-fit: fill;
   -webkit-text-stroke-width: 1px;
 }
 .gyeongsang {
-  width: 200px;
-height: 300px;
-margin-left: 33px;
-display: block;
-object-fit: fill;
-
+  width: 270px;
+  height: 400px;
+  margin-left: 73px;
+  display: block;
+  object-fit: fill; 
 }
 
 .gyeongsang img{
@@ -646,12 +645,11 @@ object-fit: fill;
 	height:100%;
   position :relative;
   border-radius: 30px;
-  
 }
 .gyeongsang span {
   position :absolute;
-  top: 1750px;
-  margin-left: 140px;
+  top: 2050px;
+  margin-left: 200px;
   color: white;
   font-size: 23px;
   letter-spacing: 0em;
@@ -660,11 +658,11 @@ object-fit: fill;
 }
 
 .honam{
-  width: 200px;
-height: 300px;
-margin-left: 33px;
-display: block;
-object-fit: fill;
+  width: 270px;
+  height: 400px;
+  margin-left: 73px;
+  display: block;
+  object-fit: fill; 
 }
 
 .honam img{
@@ -677,69 +675,16 @@ object-fit: fill;
 
 .honam span{
   position :absolute;
-  top: 2150px;
-  margin-left: 140px;
-  color: white;
-  font-size: 23px;
-  letter-spacing: 0em;
-  text-align: left;
-  -webkit-text-stroke-width: 1px;
-}
-
-
-.jeju{
-  width: 200px;
-height: 300px;
-margin-left: 33px;
-display: block;
-object-fit: fill;
-}
-
-.jeju img{
-  display:block;
-	width:100%;
-	height:100%;
-  position :relative;
-  border-radius: 30px;
-}
-
-.jeju span{
-  position :absolute;
-  top: 2950px;
-  margin-left: 140px;
-  color: white;
-  font-size: 23px;
-  letter-spacing: 0em;
-  text-align: left;
-  -webkit-text-stroke-width: 1px;
-}
-
-.gangwon{
-  width: 200px;
-height: 300px;
-margin-left: 33px;
-display: block;
-object-fit: fill;
-}
-
-.gangwon img{
-  display:block;
-	width:100%;
-	height:100%;
-  position :relative;
-  border-radius: 30px;
-}
-
-.gangwon span{
-  position :absolute;
   top: 2550px;
-  margin-left: 140px;
+  margin-left: 200px;
   color: white;
   font-size: 23px;
   letter-spacing: 0em;
   text-align: left;
   -webkit-text-stroke-width: 1px;
 }
+
+
 
 
 // -------------------------------------------------------
@@ -762,7 +707,7 @@ object-fit: fill;
 //--------------------------------------------------------
 //지역목록
 .area{
-  width: 1300px;
+  width: 1200px;
   height: 500px;
   top: 456px;
   padding: 0px, 38px, 80px, 38px;
@@ -771,7 +716,7 @@ object-fit: fill;
   display: flex;
   }
   .area-list{
-    margin-left: 95px;
+    margin-left: 150px;
     font-size: 10px;
     letter-spacing: 0em;
     text-align: left;
