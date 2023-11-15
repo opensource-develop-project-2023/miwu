@@ -23,21 +23,21 @@ public class RegisterController {
 
     @PostMapping("/register")
     public List<UserInfo> getRegister(@RequestBody String name) {
-        
+
         List<String> userInfoList = new ArrayList<>();
         String userInfo_temp[] = name.split("\\{|\\}|:|\\s+|,");
-        
-        for(int i = 0; i < userInfo_temp.length; i++) {
+
+        for (int i = 0; i < userInfo_temp.length; i++) {
             userInfo_temp[i] = userInfo_temp[i].replaceAll("\\\"", "");
-            if(i != 0 && i %2 == 0) {
+            if (i != 0 && i % 2 == 0) {
                 userInfoList.add(userInfo_temp[i]);
             }
-            
+
         }
 
-        UserInfo userInfo = new UserInfo(userInfoList.get(0), 
-                                        userInfoList.get(1), 
-                                        userInfoList.get(2));
+        UserInfo userInfo = new UserInfo(userInfoList.get(0),
+                userInfoList.get(1),
+                userInfoList.get(2));
         userInfoRepository.save(userInfo);
 
         return userInfoRepository.findAll();
