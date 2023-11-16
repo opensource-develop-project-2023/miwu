@@ -24,7 +24,7 @@ const RestaurantList = () => {
       <p>Name: {restaurant.r_name}</p>
       <p>Address: {restaurant.r_adress}</p>
       <p>Category: {restaurant.r_category}</p>
-      <p>Image URL: {restaurant.r_img_url}</p>
+      <p>Image URL: {restaurant.r_imgUrl}</p>
       <hr />
     </div>
   ))
