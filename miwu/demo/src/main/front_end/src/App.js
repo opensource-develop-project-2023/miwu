@@ -47,7 +47,6 @@ function App() {
                     <Route path="*" element={<Navigate replace to="/" />} /> 
                     <Route path="/seoul" element={<Seoul />} />
                 </Routes>
-        
             </BrowserRouter>
             <Footer />
         </div>
