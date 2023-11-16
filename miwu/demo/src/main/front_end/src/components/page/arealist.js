@@ -53,10 +53,10 @@ const arealist = () => {
            <span>충남</span>
     </div>
     <div className='chungcheong'>
-    <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+    <img src={process.env.PUBLIC_URL + '/img/chungbuk.jpg'} />
            <span>충북</span>
     </div>
-    
+  
     <div className='chungcheong'>
            <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
            <span>세종</span>
