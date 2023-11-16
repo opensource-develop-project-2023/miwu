@@ -45,11 +45,11 @@ const arealist = () => {
        <div className="slider">
     
     <div className='chungcheong'>
-    <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+    <img src={process.env.PUBLIC_URL + '/img/daejon.jpg'} />
            <span>대전</span>
     </div>
     <div className='chungcheong'>
-    <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+    <img src={process.env.PUBLIC_URL + '/img/chungnam.jpg'} />
            <span>충남</span>
     </div>
     <div className='chungcheong'>
@@ -58,7 +58,7 @@ const arealist = () => {
     </div>
   
     <div className='chungcheong'>
-           <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+           <img src={process.env.PUBLIC_URL + '/img/sejong.jpg'} />
            <span>세종</span>
            </div>
           </div>

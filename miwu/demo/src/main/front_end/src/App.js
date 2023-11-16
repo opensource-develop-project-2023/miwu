@@ -37,6 +37,7 @@ function App() {
         <div className="App">
             <BrowserRouter>
                 <Header loggedIn={LoggedIn} id={UserId} />
+             
                 <Routes>
                     <Route path="/" element={<Home />} />  
                     <Route path= "/login" element={<Login login={login} /> } />
@@ -49,6 +50,7 @@ function App() {
                 </Routes>
                 
             </BrowserRouter>
+           
             <Footer />
         </div>
     );

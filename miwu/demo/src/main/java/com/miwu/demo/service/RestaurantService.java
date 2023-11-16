@@ -23,8 +23,8 @@ public class RestaurantService {
 
     public static final String baseUrl = "https://m.map.naver.com/search2/search.naver?query=";
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-    public static final String WEB_DRIVER_PATH = "/Users/rla/Desktop/chromedriver-win64/chromedriver-win64/chromedriver.exe";
-
+    public static final String WEB_DRIVER_PATH = "/Users/seon/Downloads/chromedriver-mac-arm64/chromedriver";
+    
     public List<String> getRestaurant(String restaurantName) throws IOException {
         // 크롬 드라이버 설정
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);
