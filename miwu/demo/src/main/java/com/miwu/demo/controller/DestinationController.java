@@ -84,7 +84,6 @@ public class DestinationController {
     // 지역별 관광지 상위 10개 리턴과 상세페이지의 지역별 관광지 모두 리턴 만들기
 
     //상세페이지의 지역별 관광지 모두 리턴 만들기
-    // 이미지 테이블에 adress1(Destination Entity 에 있는 광역시/도)추가 필요
     @GetMapping("/img/detail/{location}")
     public List<Img> showDestination(@PathVariable("location") String location)
             throws IOException {
