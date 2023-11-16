@@ -4,26 +4,35 @@ import { FaEye, FaEyeSlash } from "react-icons/fa" ;
 import "./InfoInput.scss"
 
 const InfoInput = (props) => {    
-    const [childState, setChildState] = useState();
+    const [hide, setHide] = useState(false); // 숨김 상태
+    
+    useEffect(() => {
+        if (props.name == "password")
+        setHide(!hide);
+    }, [props.name]);
 
-    const [hidePw, setHidePw] = useState(true); // 비밀번호 숨김 상태
-    
-    const toggleHidePw = (boolean) => { // 비밀번호 숨김 버튼 토글
-        setHidePw(boolean);
+    const toggleHide = (boolean) => { // 비밀번호 숨김 버튼 토글
+        setHide(boolean);
     }
-    
-    
+
     return (
         <div key={props.id} className="info-input">
             {/* 입력해야 되는 종류와, 입력 조건 만족하였는지 안내 */}
-            <label>{props.label}{props.notice}</label>
+            <div className="lab">
+                <label>{props.label}</label>
+                {
+                    props.validity ? 
+                    <p className="valid">* 만족합니다</p> :
+                    <p className="invalid">* 조건을 만족하지 않습니다</p> 
+                }
+            </div>
             <div className="input-div">
                 {/* 입력받는 곳 */}
                 <input      
-                    type={props.type} 
+                    type={!hide ? "text" : "password"} 
                     name={props.name}
                     placeholder={props.placeholder}
-                    onChange={(event) => props.handler(event)}
+                    onChange= {(event) => props.handler(event)}
                 />
                 {/* 아이디를 입력받는 곳이면, 중복 체크 버튼 생성 */}
                 {/* 중복체크 기능 연결 예정 */}
@@ -37,17 +46,15 @@ const InfoInput = (props) => {
                 {/* hidePw 상태값에 따라 버튼 모양(눈)이 감겼다 떠짐 */}
                 {/* 숨김 기능 연결 예정 */}
                 {
-                    (props.type == "password") ? (
-                        <div className="hide-eye" onClick={() => toggleHidePw(!hidePw)}> 
+                    (props.name == "password") ? 
+                        <div className="hide-eye" onClick={() => toggleHide(!hide)}> 
                             {
-                                (hidePw) ? <FaEyeSlash size="24" color="#212121"/> 
+                                (hide) ? <FaEyeSlash size="24" color="#212121"/> 
                                 : <FaEye size="24" color="#212121"/>
                             } 
                         </div>
                         
-                    ) : (<></>)
-                        
-                    
+                    : <></>
                 }
             </div>
             {/* 입력 조건 안내 */}

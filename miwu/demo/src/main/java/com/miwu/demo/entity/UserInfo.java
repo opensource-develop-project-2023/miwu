@@ -41,10 +41,20 @@ public class UserInfo {
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
+    // 힌트 질문
+    @Column(name = "question", nullable = false, length = 100)
+    private String question;
+
+    // 힌트 답변
+    @Column(name = "answer", nullable = false, length = 100)
+    private String answer;
+
     // 생성자
-    public UserInfo(String user_id, String password, String user_name) {
+    public UserInfo(String user_id, String password, String user_name, String question, String answer) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.password = password;
+        this.question = question;
+        this.answer = answer;
     }
 }

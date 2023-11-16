@@ -67,5 +67,19 @@ public class RestaurantController {
     }
         return restaurantRepository.findAll();
     }
+
+    // DB에서  특정 지역 맛집 보내기(+이미지 포함)
+    // @GetMapping("/restaurant/{adress1}")
+    /* "http://localhost:8080/restaurant/" 주소 다음에 adress1에 한글로 광역시/도 입력해주면 됩니다.
+    ex) http://localhost:8080/restaurant/부산광역시 라고 치면 DB에서 부산광역시 맛집 전부 리턴해 줍니다.*/
+    // public List<Restaurant> showRestaurants(@PathVariable("adress1") String adress)
+    // throws IOException {
+    //         List<Restaurant> res1 = restaurantRepository.findByAdress1(adress);
+
+    //         // 진행과정 확인용
+    //         System.out.println(res1);
+            
+    //         return res1;
+    // }
 }
 
