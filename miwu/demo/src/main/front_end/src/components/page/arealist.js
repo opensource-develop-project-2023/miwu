@@ -27,12 +27,12 @@ const arealist = () => {
     
 
            <div className='capital-area'>
-    <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+    <img src={process.env.PUBLIC_URL + '/img/gyeonggi-do.jpg'} />
            <span>경기</span>
            </div>
            
            <div className='capital-area'>
-           <img src={process.env.PUBLIC_URL + '/img/seoul2.jpg'} />
+           <img src={process.env.PUBLIC_URL + '/img/incheon.jpg'} />
            <span>인천</span>
            </div>
   
