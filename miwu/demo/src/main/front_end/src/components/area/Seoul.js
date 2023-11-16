@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';;
+import React from "react";
+import RestaurantList from "./restaurantlist";
 
-
-
-const Seoul = () => {
-    return (
-        <div id="seoul">
-            <h1>서울 상세 페이지</h1>
-           
-        </div>
-    );
+function App() {
+  return (
+    <div>
+      <h1>서울 상세 페이지</h1>
+      <RestaurantList />
+    </div>
+  );
 }
 
-export default Seoul;
+export default App;

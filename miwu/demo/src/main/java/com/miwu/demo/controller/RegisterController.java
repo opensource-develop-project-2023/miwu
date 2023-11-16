@@ -26,7 +26,7 @@ public class RegisterController {
     final UserInfoRepository userInfoRepository;
 
     @PostMapping("/register")
-    public void getRegister(@RequestBody String name) {
+    public boolean getRegister(@RequestBody String name) {
 
         List<String> userInfoList = new ArrayList<>();
         String userInfo_temp[] = name.split("\\{|\\}|:|\\s+|,");
@@ -36,22 +36,32 @@ public class RegisterController {
             if (i != 0 && i % 2 == 0) {
                 userInfoList.add(userInfo_temp[i]);
             }
-
         }
         
-        UserInfo userInfo = new UserInfo(
+        if (checkId(userInfo_temp[2]) == false) {
+            System.out.println("ID 생성 가능");
+            UserInfo userInfo = new UserInfo(
             userInfoList.get(0),    // ID
             userInfoList.get(1),    // user name
             userInfoList.get(2),    // PW
             userInfoList.get(3),    // question
             userInfoList.get(4));   // answer
-        userInfoRepository.save(userInfo);
-        // saveResult(1);
+            userInfoRepository.save(userInfo);
+            // saveResult(1);
 
-        // 출력값 확인
-        // for(int i = 0; i < userInfoList.size();i++) {
-        //     System.out.println(userInfoList.get(i));
-        // }
-        userInfoRepository.findAll();   
+            // 출력값 확인
+            // for(int i = 0; i < userInfoList.size();i++) {
+            //     System.out.println(userInfoList.get(i));
+            // }
+            userInfoRepository.findAll(); 
+            return true; 
+        } else {
+            System.out.println("중복 ID 존재");
+            return false;
+        }
+    }
+
+    public boolean checkId(String inputId) {
+        return userInfoRepository.existsByuserId(inputId);  // 존재하면 true 반환
     }
 }

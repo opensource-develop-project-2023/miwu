@@ -1,8 +1,8 @@
-/*/
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import CardSlide from './CardSlide';
-import './scss/App.scss';
+
 
 const SpotList = (props) => {
     const [loading, setLoading] = useState(false); // loading 상태 변수
@@ -35,4 +35,4 @@ const SpotList = (props) => {
     );    
 };
 
-export default SpotList; /*/
+export default SpotList; 

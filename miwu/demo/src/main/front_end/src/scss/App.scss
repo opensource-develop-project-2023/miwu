@@ -582,9 +582,7 @@ display: flex;
 height: 300px;
 margin-left: 33px;
 display: block;
-object-fit: fill;
-
-
+object-fit: cover;
 }
 .chungcheong img{
   display:block;
@@ -592,6 +590,7 @@ object-fit: fill;
 	height:100%;
   position :relative;
   border-radius: 30px;
+ 
 }
 .chungcheong span{
   position :absolute;

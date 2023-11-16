@@ -44,12 +44,17 @@ public class Img {
     @Column(name = "dest_name", nullable = false, length = 45)
     private String dest_name;
 
+    // 광역시/도
+    @Column(name = "adress1", nullable = false, length = 45)
+    private String adress1;
+
     // 관광지 tag
     @Column(name = "tag", nullable = false, length = 2083)
     private String tag;
 
     // 생성자
-    public Img(String dest_name, String url1, String url2, String url3, String tag) {
+    public Img(String adress1, String dest_name, String url1, String url2, String url3, String tag) {
+        this.adress1 = adress1;
         this.dest_name = dest_name;
         this.url1 = url1;
         this.url2 = url2;
