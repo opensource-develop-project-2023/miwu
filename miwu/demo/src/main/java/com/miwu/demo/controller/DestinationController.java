@@ -64,17 +64,19 @@ public class DestinationController {
                     getCsvInfo.get(i).get(6).toString(),
                     getCsvInfo.get(i).get(7).toString());
 
-            String tmpDstNm = getCsvInfo.get(i).get(3).toString();
-            List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
-            if (urlsInfo.size() >= 4) {
-                System.out.println("이미지 개수: " + urlsInfo.size());
-                Img imgUrl = new Img(tmpDstNm,
-                        urlsInfo.get(0),
-                        urlsInfo.get(1),
-                        urlsInfo.get(2),
-                        urlsInfo.get(3));
-                dst.addImg(imgUrl);
-            }
+                String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
+                String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+                List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
+                if (urlsInfo.size() >= 4) {
+                    System.out.println("이미지 개수: " + urlsInfo.size());
+                    Img imgUrl = new Img(adrtmpDstNm,
+                            tmpDstNm,
+                            urlsInfo.get(0),
+                            urlsInfo.get(1),
+                            urlsInfo.get(2),
+                            urlsInfo.get(3));
+                    dst.addImg(imgUrl);
+                }
 
             destinationRepository.save(dst);
         }
