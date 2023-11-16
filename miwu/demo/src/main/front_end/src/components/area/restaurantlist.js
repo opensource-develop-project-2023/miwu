@@ -11,7 +11,7 @@ const RestaurantList = () => {
   const fetchData = async () => {
     console.log("hello");
     try {
-      const response = await axios.get('/api/restaurant/부산광역시');
+      const response = await axios.get('/api/restaurant/서울특별시');
       console.log(response);
       setRestaurants(response.data);
     } catch (error) {
@@ -21,10 +21,10 @@ const RestaurantList = () => {
 
   const restaurantData = restaurants.map((restaurant, index) => (
     <div key={index}>
-      <p>Name: {restaurant.name}</p>
-      <p>Address: {restaurant.adress_last}</p>
-      <p>Category: {restaurant.category}</p>
-      <p>Image URL: {restaurant.imgUrl}</p>
+      <p>Name: {restaurant.r_name}</p>
+      <p>Address: {restaurant.r_adress}</p>
+      <p>Category: {restaurant.r_category}</p>
+      <p>Image URL: {restaurant.r_img_url}</p>
       <hr />
     </div>
   ))
