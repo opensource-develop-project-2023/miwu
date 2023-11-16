@@ -12,5 +12,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     @Override
     List<Restaurant> findAll(); // 조건없이 테이블의 전체 레코드 조회
 
+    List<Restaurant> findByAdress1(String adress1); // 관광지 광역시/도 를 기반으로 조회
+
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제
 }
