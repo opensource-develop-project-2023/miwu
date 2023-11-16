@@ -37,24 +37,23 @@ public class RegisterController {
                 userInfoList.add(userInfo_temp[i]);
             }
         }
-        
-        if (checkId(userInfo_temp[2]) == false) {
+
+        // if (checkId(userInfo_temp[2]) == false) {
+        if (true) {
             System.out.println("ID 생성 가능");
             UserInfo userInfo = new UserInfo(
-            userInfoList.get(0),    // ID
-            userInfoList.get(1),    // user name
-            userInfoList.get(2),    // PW
-            userInfoList.get(3),    // question
-            userInfoList.get(4));   // answer
+                    userInfoList.get(0), // ID
+                    userInfoList.get(1), // user name
+                    userInfoList.get(2), // PW
+                    userInfoList.get(3), // question
+                    userInfoList.get(4)); // answer
             userInfoRepository.save(userInfo);
             // saveResult(1);
 
             // 출력값 확인
             // for(int i = 0; i < userInfoList.size();i++) {
-            //     System.out.println(userInfoList.get(i));
-            // }
-            userInfoRepository.findAll(); 
-            return true; 
+            // System.out.println(userInfoList.get(i));
+            return true;
         } else {
             System.out.println("중복 ID 존재");
             return false;
@@ -62,6 +61,6 @@ public class RegisterController {
     }
 
     public boolean checkId(String inputId) {
-        return userInfoRepository.existsByuserId(inputId);  // 존재하면 true 반환
+        return userInfoRepository.existsByuserId(inputId); // 존재하면 true 반환
     }
 }

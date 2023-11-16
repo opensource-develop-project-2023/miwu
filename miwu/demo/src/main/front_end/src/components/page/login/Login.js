@@ -1,66 +1,112 @@
-import React, { component,useState, memo } from 'react';
-import { useNavigate, Link } from 'react-router-dom'
+    import React, { useState } from 'react';
+    import { useNavigate, Link } from 'react-router-dom'
 
-import "./Login.scss";
-const Login = ({login}) => {
-    const [Id, setId] = useState("");
-    const [Pw, setPw] = useState("");
-    const realId = "user";
-    const realPw = "12345678";
-    
-    const navigate = useNavigate();
+    import axios from 'axios';
 
+    import "./Login.scss";
+    const Login = ({login}) => {
+        const [id, setId] = useState("");
+        const [pw, setPw] = useState("");
+        const [warning, setWarning] = useState("");
 
-    const onIdHandler = (event) => {
-        setId(event.currentTarget.value);
-    }
+        const [idValidity, setIdValidity] = useState(false);
+        const [pwValidity, setPwValidity] = useState(false);
+        
+        const realId = "root";
+        const realPw = "1q2w3e4r!";
+        
+        const navigate = useNavigate();
 
-    const onPwHandler = (event) => {
-        setPw(event.currentTarget.value);
-    }
+        const updateId = (event) => {    
+            setId(event.currentTarget.value);
+            setIdValidity(checkIdValidity(id));
+            // console.log("updateId: " + idValidity);
+        } // 아이디 값이 변경되면, 상태값도 업데이트함
 
-    function onSubmitHandler(event) {
-        event.preventDefault();
-        if (Id == realId && Pw == realPw) {
-            console.log(Id);
-            navigate("/");
-            login(Id);
-        } else {
-            alert("로그인 실패");
+        const updatePw = (event) => {
+            setPw(event.currentTarget.value);
+            setPwValidity(checkPwValidity(pw));
+            // console.log("updatePw: " + pwValidity);
+        } // 비밀번호 값이 변경되면, 상태값도 업데이트함
+
+        const checkIdValidity = (id) => { // 아이디 유효성 검사
+            return /[a-zA-Z0-9]{6,10}$/.test(id);
         }
-    }
-    
-    return (
-        <form id="login" onSubmit={onSubmitHandler}>
-            <div>
-                <label>아이디</label>
-                <input 
-                    type="text" 
-                    name="id" 
-                    value={Id}
-                    placeholder="아이디" 
-                    onChange={onIdHandler}
-                />
+
+        const checkPwValidity = (pw) => { // 비밀번호 유효성 검사
+            return /[a-zA-Z0-9`~!@#$%^&*()-_=+]{6,20}$/.test(pw);
+        }
+
+        const onSubmit = (event)  => {
+            event.preventDefault(); 
+                
+            axios.post('/api/login', 
+                {
+                    user_id: id,
+                    password: pw,
+                },
+                {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                }
+            )
+            .then((response) => {
+                if (response.data == true) { // 아이디와 비밀번호가 일치한다면
+                    login(id); // 해당하는 아이디로 로그인
+                    navigate("/"); // 홈 화면으로 이동
+                } else {
+                    setWarning("가입되어 있지 않은 아이디이거나, 잘못된 비밀번호입니다.");    
+                }
+            })
+            .catch((error) => { // 실패했을 경우 에러 출력
+                if ((id === realId) && (pw === realPw)) { // 백엔드 기능이 구현되기 전까지 쓰는 테스트 코드입니다.
+                    login(id); // 해당하는 아이디로 로그인
+                    navigate("/"); // 홈 화면으로 이동
+                }
+                console.log(error);
+                setWarning("가입되어 있지 않은 아이디이거나, 잘못된 비밀번호입니다.");  
+            })       
+        }
+        
+        return (
+            <div id="login">
+                <h1>로그인</h1>
+                <div className="input-div">
+                    <label>아이디</label>
+                    <input 
+                        type="text" 
+                        name="id" 
+                        value={id}
+                        placeholder="아이디" 
+                        onChange={updateId}
+                    />
+                    </div>
+                <div className="input-div">
+                    <label>비밀번호</label>
+                    <input 
+                        type="password" 
+                        name="pw" 
+                        value={pw}
+                        placeholder="비밀번호" 
+                        onChange={updatePw}
+                    />
                 </div>
-            <div>
-                <label>비밀번호</label>
-                <input 
-                    type="password" 
-                    name="pw" 
-                    value={Pw}
-                    placeholder="비밀번호" 
-                    onChange={onPwHandler}
-                />
+                {(warning === "") ?  <></>: <p id="warning">{warning}</p>}
+                <button onClick={onSubmit} id="signin" className="btn btn-primary">로그인</button>
+                
+                <div className="extra">
+                    <Link to="/find_id">
+                        <p>아이디 찾기</p>
+                    </Link>
+                    <Link to="/find_pw">
+                        <p>비밀번호 찾기</p>
+                    </Link>
+                    <Link to="/register">
+                        <p>회원가입</p>
+                    </Link>
+                </div>
             </div>
-            <button type="submit">로그인</button>
-            <div>
-                <p>비밀번호를 잊어버리셨나요?</p>
-                <Link to="/register">
-                    <p>회원가입</p>
-                </Link>
-            </div>
-        </form>
-    );
-    
-}
-export default Login;
+        );
+    }
+    export default Login;
