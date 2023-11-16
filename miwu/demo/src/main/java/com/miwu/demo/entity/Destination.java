@@ -75,6 +75,10 @@ public class Destination {
     @JoinColumn(name = "dest_name", insertable = false, updatable = false)
     private List<Img> img;
 
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "adress1", insertable = false, updatable = false)
+    private List<Img> img_adress1;
+
     // 생성자
     public Destination(String rank_number, String adress1, String adress2,
             String dest_name, String road_adress, String m_category, String s_category, String search_number) {

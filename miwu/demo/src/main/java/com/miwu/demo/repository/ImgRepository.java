@@ -12,5 +12,7 @@ public interface ImgRepository extends JpaRepository<Img, Long> {
     @Override
     List<Img> findAll(); // 조건없이 테이블의 전체 레코드 조회
 
+    List<Img> findByAdress1(String adress1); // 관광지 광역시/도 를 기반으로 조회
+
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제
 }
