@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 // GetMapping
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 import java.io.IOException;
@@ -66,6 +67,21 @@ public class RestaurantController {
         }
     }
         return restaurantRepository.findAll();
+    }
+
+    // DB에서  특정 지역 맛집 보내기(+이미지 포함)
+    @GetMapping("/restaurant/{adress1}")
+    /* "http://localhost:8080/restaurant/" 주소 다음에 adress1에 한글로 광역시/도 입력해주면 됩니다.
+    ex) http://localhost:8080/restaurant/부산광역시 라고 치면 DB에서 부산광역시 맛집 전부 리턴해 줍니다.
+     그리고 한번에 전부 리턴 되는 데  res1.get(0) 이렇게 해보면 인데스 하나 당 맛집 1개 정보씩 볼수 있을 겁니다.*/
+    public List<Restaurant> showRestaurants(@PathVariable("adress1") String adress)
+     throws IOException {
+            List<Restaurant> res1 = restaurantRepository.findByAdress1(adress);
+
+            // 진행과정 확인용
+            System.out.println(res1);
+            
+            return res1;
     }
 }
 
