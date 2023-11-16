@@ -45,7 +45,7 @@ public class Restaurant {
     private String r_category;
 
     // 맛집 이미지 url
-    @Column(name = "r_imgUrl", nullable = false, length = 45)
+    @Column(name = "r_imgUrl", nullable = false, length = 2083)
     private String r_imgUrl;
 
     // 생성자
