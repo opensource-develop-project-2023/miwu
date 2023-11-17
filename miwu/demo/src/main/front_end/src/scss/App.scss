@@ -785,6 +785,7 @@ object-fit: fill;
   display: flex;
   flex-wrap: wrap; /* 추가된 부분 */
   justify-content: space-between; /* 추가된 부분 */
+  margin-top: 100px;
 }
 
 .card {
@@ -911,3 +912,5 @@ object-fit: fill;
 .tag {
   font-size: 12px;
 }
+//-------
+

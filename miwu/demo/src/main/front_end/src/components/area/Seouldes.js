@@ -55,7 +55,7 @@ const TopDestinationList = () => {
               <p className="tag">{destination.tag}</p>
             </div>
           </div>
-          <hr />
+      
         </div>
       ))}
     </div>
