@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import axios from 'axios';
 
 import InfoInput from '../infoInput/InfoInput';
@@ -35,6 +37,7 @@ const Register = () => {
     const [pwValidity, setPwValidity] = useState(false);
     const [nameValidity, setNameValidity] = useState(false);
     const [answerValidity, setAnswerValidity] = useState(false);
+    const [isIdDuplicated, setIsIdDuplicated] = useState(false);
 
     const updateId = (event) => {    
         setId(event.currentTarget.value);
@@ -77,6 +80,21 @@ const Register = () => {
     const checkAnswerValidity = (answer) => { // 힌트 유효성 검사
         return /[가-힣0-9]+/.test(answer);
     }
+    
+    const checkDuplicate = (event) => {
+        console.log("hello");
+        axios.post('/api/checkIdDuplicate', {
+            user_id: id,
+        })
+        .then((response) => {
+            setIsIdDuplicated(response.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+
+    const navigate = useNavigate();
 
     const infoData = [
         new Info(
@@ -108,19 +126,39 @@ const Register = () => {
         ),
     ];
 
-    const infoList = infoData.map((info) => (
-        <InfoInput 
-            key={info.id} 
-            label={info.label} 
-            type={info.type} 
-            name={info.name} 
-            placeholder={info.placeholder}
-            handler={info.handler}
-            condition={info.condition}
-            notice={info.notice}
-            validity={info.validity}
-        />
-    ));
+    var infoList = [];
+    for (let i = 0; i < infoData.length; i++) {
+        if (i == 0) { // 아이디 입력
+            infoList.push(
+                <InfoInput 
+                    key={infoData[i].id} 
+                    label={infoData[i].label} 
+                    type={infoData[i].type} 
+                    name={infoData[i].name} 
+                    placeholder={infoData[i].placeholder}
+                    handler={infoData[i].handler}
+                    condition={infoData[i].condition}
+                    notice={infoData[i].notice}
+                    validity={infoData[i].validity}
+                    checkDuplicate={checkDuplicate}
+                />
+            );
+        } else { // 패스워드, 이름 입력
+            infoList.push(
+                <InfoInput 
+                    key={infoData[i].id} 
+                    label={infoData[i].label} 
+                    type={infoData[i].type} 
+                    name={infoData[i].name} 
+                    placeholder={infoData[i].placeholder}
+                    handler={infoData[i].handler}
+                    condition={infoData[i].condition}
+                    notice={infoData[i].notice}
+                    validity={infoData[i].validity}
+                />
+            );
+        }
+    }
     
     const queryData = [
         new Query(1, "내가 좋아하는 여행지는?"),
@@ -134,12 +172,11 @@ const Register = () => {
         </option>
     ));
     
+
+
     const onSubmit = (event) => { // 회원가입 버튼 눌렀을 때 실행되는 함수
         event.preventDefault();
         
-        // /api/register = http://localhost:8080/register
-        // json 파일 형식으로 송신
-        console.log("updateQueryId: " + queryId);
         axios.post('/api/register', 
             {
                 user_id: id,
@@ -155,7 +192,9 @@ const Register = () => {
             }
         )
         .then((response) => {
-            console.log(response);  
+            if (response.data == true) {
+                navigate("/");
+            }
         })
         .catch((error) => { // 실패했을 경우 에러 출력
             console.log(error);

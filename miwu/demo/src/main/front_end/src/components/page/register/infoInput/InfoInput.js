@@ -38,7 +38,7 @@ const InfoInput = (props) => {
                 {/* 중복체크 기능 연결 예정 */}
                 {
                     (props.name == "user_id") ? (
-                        <button id="check-repetition" className="btn btn-primary">중복확인</button> 
+                        <button id="check-repetition" className="btn btn-primary" onClick={() => props.checkDuplicate}>중복확인</button> 
                     ) : (<></>)
                 }
 

@@ -41,7 +41,6 @@ public class DestinationController {
     @Autowired
     private CrawlingService crawlingService;
 
-
     @GetMapping("/destination/{location}")
     public List<Destination> listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
@@ -64,19 +63,19 @@ public class DestinationController {
                     getCsvInfo.get(i).get(6).toString(),
                     getCsvInfo.get(i).get(7).toString());
 
-                String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
-                String tmpDstNm = getCsvInfo.get(i).get(3).toString();
-                List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
-                if (urlsInfo.size() >= 4) {
-                    System.out.println("이미지 개수: " + urlsInfo.size());
-                    Img imgUrl = new Img(adrtmpDstNm,
-                            tmpDstNm,
-                            urlsInfo.get(0),
-                            urlsInfo.get(1),
-                            urlsInfo.get(2),
-                            urlsInfo.get(3));
-                    dst.addImg(imgUrl);
-                }
+            String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
+            String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+            List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
+            if (urlsInfo.size() >= 4) {
+                System.out.println("이미지 개수: " + urlsInfo.size());
+                Img imgUrl = new Img(adrtmpDstNm,
+                        tmpDstNm,
+                        urlsInfo.get(0),
+                        urlsInfo.get(1),
+                        urlsInfo.get(2),
+                        urlsInfo.get(3));
+                dst.addImg(imgUrl);
+            }
 
             destinationRepository.save(dst);
         }
@@ -84,16 +83,15 @@ public class DestinationController {
     }
 
     // 지역별 관광지 상위 10개 리턴과 상세페이지의 지역별 관광지 모두 리턴 만들기
-
-    //상세페이지의 지역별 관광지 모두 리턴 만들기
+    // 상세페이지의 지역별 관광지 모두 리턴 만들기
     @GetMapping("/img/detail/{location}")
     public List<Img> showDestination(@PathVariable("location") String location)
             throws IOException {
-                List<Img> img_detail = imgRepository.findByAdress1(location);
+        List<Img> img_detail = imgRepository.findByAdress1(location);
 
-                // 진행과정 확인용
-                System.out.println(img_detail);
+        // 진행과정 확인용
+        System.out.println(img_detail);
 
-                return img_detail;
+        return img_detail;
     }
 }

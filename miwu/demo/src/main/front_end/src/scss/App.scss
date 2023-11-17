@@ -102,6 +102,11 @@ color: rgba(33, 150, 243, 1);
 p {
   font-weight: 400;
 }
+
+a { // Link 태그 밑줄 제거
+  text-decoration: none;
+}
+
 // -------------------------------------------------------
 
 
@@ -609,7 +614,6 @@ object-fit: cover;
 height: 300px;
 margin-left: 33px;
 display: block;
-object-fit: cover;
 }
 
 .capital-area img{
@@ -618,7 +622,7 @@ object-fit: cover;
 	height:100%;
   position :relative;
   border-radius: 30px;
-
+  object-fit: cover;
 }
 
 .capital-area span {
@@ -741,24 +745,6 @@ object-fit: fill;
   -webkit-text-stroke-width: 1px;
 }
 
-
-// -------------------------------------------------------
-// 로그인
-// -------------------------------------------------------
-#login {
-  display: flex;
-  flex-direction: column;
-}
-// -------------------------------------------------------
-// 회원가입
-// -------------------------------------------------------
-#register {
-  display: flex;
-  flex-direction: column;
-}
-
-//--------------------------------------------------------
-//지역목록
 //--------------------------------------------------------
 //지역목록
 .area{
