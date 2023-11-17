@@ -83,7 +83,7 @@ public class DestinationController {
     }
 
     // 지역별 관광지 상위 10개 리턴과 상세페이지의 지역별 관광지 모두 리턴 만들기
-    // 상세페이지의 지역별 관광지 모두 리턴 만들기
+    // 상세페이지의 지역별 관광지 모두 리턴
     @GetMapping("/img/detail/{location}")
     public List<Img> showDestination(@PathVariable("location") String location)
             throws IOException {
@@ -93,5 +93,22 @@ public class DestinationController {
         System.out.println(img_detail);
 
         return img_detail;
+    }
+
+    //지역별 관광지 상위 10개 리턴
+    @GetMapping("/img/top10/{location}")
+    public List<Img> showTopDestination(@PathVariable("location") String location)
+            throws IOException {
+                List<Img> tmp_des_top = imgRepository.findByAdress1(location);
+                List<Img> top10List=new ArrayList<Img>();
+
+                for(int i=0; i<10; i++){
+                    top10List.add(tmp_des_top.get(i));
+                }
+
+                // 진행과정 확인용
+                System.out.println(top10List);
+
+                return top10List;
     }
 }
