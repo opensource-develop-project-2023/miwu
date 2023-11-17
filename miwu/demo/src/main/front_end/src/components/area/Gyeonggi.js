@@ -24,11 +24,11 @@ const RestaurantList = () => {
 
   const restaurantData = restaurants.slice(0, visibleRestaurants).map((restaurant, index) => (
     <div key={index} className="card">
-      <div className="card-content">
-        <div className="image-container">
+      <div className="restaurant-card-content">
+        <div className="restaurant-image-container">
           <img src={restaurant.r_imgUrl} alt={restaurant.r_name} />
         </div>
-        <div className="details">
+        <div className="restaurant-details">
           <p className="name">Name: {restaurant.r_name}</p>
           <p className="address">Address: {restaurant.r_adress}</p>
           <p className="category">Category: {restaurant.r_category}</p>
@@ -39,14 +39,16 @@ const RestaurantList = () => {
   ));
 
   return (
-    <div className="restaurant-list">
-      {restaurantData}
-      <div className="load-more-container">
-        {restaurants.length > visibleRestaurants && (
-          <button className="load-more-button" onClick={loadMore}>
-            더보기
-          </button>
-        )}
+    <div className="restaurant-list-container">
+      <div className="restaurant-list">
+        {restaurantData}
+        <div className="load-more-container">
+          {restaurants.length > visibleRestaurants && (
+            <button className="load-more-button" onClick={loadMore}>
+              더보기
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
