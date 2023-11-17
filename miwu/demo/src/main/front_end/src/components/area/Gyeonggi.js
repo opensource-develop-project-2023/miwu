@@ -11,7 +11,7 @@ const RestaurantList = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/restaurant/서울특별시');
+      const response = await axios.get('/api/restaurant/경기도');
       setRestaurants(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
