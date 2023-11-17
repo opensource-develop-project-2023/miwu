@@ -17,7 +17,7 @@ import MyPage from './components/page/myPage/MyPage';
 import Local from './components/page/Local';
 import Theme from './components/page/Theme';
 import Seoul from './components/area/Seoul';
-import Gyeonggido from './components/area/Gyeonggi-do';
+import Gyeonggido from './components/area/Gyeonggi';
 import Incheon from './components/area/Incheon';
 function App() {
     const [LoggedIn, setLoggedIn] = useState(false);
