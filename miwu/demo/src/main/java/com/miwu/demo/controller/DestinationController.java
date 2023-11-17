@@ -46,8 +46,8 @@ public class DestinationController {
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
         imgRepository.deleteAllInBatch();
+        String csvPath = "./demo/csv/";
 
-        String csvPath = "miwu/demo/csv/";
         String csvname = csvPath + location + ".csv";
 
         ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
