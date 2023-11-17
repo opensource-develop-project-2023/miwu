@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PostMapping;
 // RequestBody
 import org.springframework.web.bind.annotation.RequestBody;
-
-// Img Entity
-import com.miwu.demo.entity.UserInfo;
 // Restaurant Repository
 import com.miwu.demo.repository.UserInfoRepository;
 
@@ -19,12 +16,12 @@ import java.util.List;
 
 @RequiredArgsConstructor // 초기화 되지않은 final 변수에 대해 생성자를 생성
 @RestController
-public class RegisterController {
+public class CheckIdDuplicateController {
     final UserInfoRepository userInfoRepository;
 
-    @PostMapping("/register")
-    public boolean getRegister(@RequestBody String name) {
-
+    @PostMapping("/checkIdDuplicate")
+    public boolean checkId(@RequestBody String name) { 
+        System.out.println(name);
         List<String> userInfoList = new ArrayList<>();
         String userInfo_temp[] = name.split("\\{|\\}|:|\\s+|,");
 
@@ -34,27 +31,11 @@ public class RegisterController {
                 userInfoList.add(userInfo_temp[i]);
             }
         }
-
-        try {
-            UserInfo userInfo = new UserInfo(
-                    userInfoList.get(0), // ID
-                    userInfoList.get(1), // user name
-                    userInfoList.get(2), // PW
-                    userInfoList.get(3), // question
-                    userInfoList.get(4)); // answer
-            userInfoRepository.save(userInfo);
-            
-            // 출력값 확인
-            for(int i = 0; i < userInfoList.size();i++) {
-            System.out.println(userInfoList.get(i));
-            } 
+        String inputId = userInfoList.get(0);
+        if( userInfoRepository.existsByuserId(inputId) ) {  // 테이블에 id 존재하면
+            return false;
+        } else {    // 테이블에 id 존재하지 않으면
             return true;
         }
-        catch (Exception e) {
-            e.printStackTrace();
-            return false;
-            }
-        }
-
-
+    }
 }

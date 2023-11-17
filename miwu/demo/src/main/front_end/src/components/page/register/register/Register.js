@@ -214,7 +214,7 @@ const Register = () => {
             />
             {
                 (idValidity && pwValidity && nameValidity && answerValidity) ?
-                <button onClick={onSubmit} id="signup" className="btn btn-primary">회원가압</button> :
+                <button onClick={onSubmit} id="signup" className="btn btn-primary">회원가입</button> :
                 <button className="btn btn-secondary" disabled>회원가입</button> 
             }
         </div>
