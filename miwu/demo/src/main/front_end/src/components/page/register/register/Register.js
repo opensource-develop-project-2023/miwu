@@ -38,10 +38,12 @@ const Register = () => {
     const [nameValidity, setNameValidity] = useState(false);
     const [answerValidity, setAnswerValidity] = useState(false);
     const [isIdDuplicated, setIsIdDuplicated] = useState(false);
+    const [checkedIdDuplicated, setCheckedIdDuplicated] = useState(false);
 
     const updateId = (event) => {    
         setId(event.currentTarget.value);
         setIdValidity(checkIdValidity(id));
+        setCheckedIdDuplicated(false);
         // console.log("updateId: " + idValidity);
     } // 아이디 값이 변경되면, 상태값도 업데이트함
 
@@ -81,13 +83,16 @@ const Register = () => {
         return /[가-힣0-9]+/.test(answer);
     }
     
-    const checkDuplicate = (event) => {
-        console.log("hello");
+    const checkIdDuplicate = (event) => {
         axios.post('/api/checkIdDuplicate', {
             user_id: id,
         })
         .then((response) => {
-            setIsIdDuplicated(response.data);
+            console.log(!response.data ? "중복" : "중복하지 않음");
+            setIsIdDuplicated(!response.data);
+            if (!checkedIdDuplicated) {
+                setCheckedIdDuplicated(true);
+            }
         })
         .catch((error) => {
             console.log(error);
@@ -133,14 +138,15 @@ const Register = () => {
                 <InfoInput 
                     key={infoData[i].id} 
                     label={infoData[i].label} 
-                    type={infoData[i].type} 
                     name={infoData[i].name} 
                     placeholder={infoData[i].placeholder}
                     handler={infoData[i].handler}
                     condition={infoData[i].condition}
                     notice={infoData[i].notice}
                     validity={infoData[i].validity}
-                    checkDuplicate={checkDuplicate}
+                    isIdDuplicated={isIdDuplicated}
+                    checkDuplicate={checkIdDuplicate}
+                    checkedIdDuplicated={checkedIdDuplicated}
                 />
             );
         } else { // 패스워드, 이름 입력
@@ -148,7 +154,6 @@ const Register = () => {
                 <InfoInput 
                     key={infoData[i].id} 
                     label={infoData[i].label} 
-                    type={infoData[i].type} 
                     name={infoData[i].name} 
                     placeholder={infoData[i].placeholder}
                     handler={infoData[i].handler}
@@ -171,8 +176,6 @@ const Register = () => {
             {query.q}
         </option>
     ));
-    
-
 
     const onSubmit = (event) => { // 회원가입 버튼 눌렀을 때 실행되는 함수
         event.preventDefault();
@@ -213,7 +216,7 @@ const Register = () => {
                 validity={answerValidity} 
             />
             {
-                (idValidity && pwValidity && nameValidity && answerValidity) ?
+                (idValidity && !isIdDuplicated && pwValidity && nameValidity && answerValidity) ?
                 <button onClick={onSubmit} id="signup" className="btn btn-primary">회원가입</button> :
                 <button className="btn btn-secondary" disabled>회원가입</button> 
             }

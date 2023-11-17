@@ -7,7 +7,7 @@ const InfoInput = (props) => {
     const [hide, setHide] = useState(false); // 숨김 상태
     
     useEffect(() => {
-        if (props.name == "password")
+        if (props.name === "password")
         setHide(!hide);
     }, [props.name]);
 
@@ -21,10 +21,29 @@ const InfoInput = (props) => {
             <div className="lab">
                 <label>{props.label}</label>
                 {
-                    props.validity ? 
-                    <p className="valid">* 만족합니다</p> :
-                    <p className="invalid">* 조건을 만족하지 않습니다</p> 
+                    (props.name === "user_id") ?
+                    <div className="duplicate">
+                        {
+                            !props.checkedIdDuplicated ?
+                            <p></p> :
+                            (
+                                (props.validity && !props.idDuplicated) ?
+                                <p className="valid">사용가능한 아이디입니다</p> :
+                                <p className="invalid">이미 존재하는 아이디입니다</p>
+                            )
+                        }
+                    </div> :
+                    <></>
                 }
+                <div className="notice">
+                    <div className="validity">
+                        {
+                            props.validity ?
+                            <p className="valid">* 입력 조건을 만족합니다</p> :
+                            <p className="invalid">* 입력 조건을 만족하지 않습니다</p>
+                        }
+                    </div>
+                </div> 
             </div>
             <div className="input-div">
                 {/* 입력받는 곳 */}
@@ -38,7 +57,7 @@ const InfoInput = (props) => {
                 {/* 중복체크 기능 연결 예정 */}
                 {
                     (props.name == "user_id") ? (
-                        <button id="check-repetition" className="btn btn-primary" onClick={() => props.checkDuplicate}>중복확인</button> 
+                        <button id="check-repetition" className="btn btn-primary" onClick={() => props.checkDuplicate()}>중복확인</button> 
                     ) : (<></>)
                 }
 

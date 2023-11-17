@@ -11,7 +11,23 @@ h1 {
 
 .input-div {
     width: 100%;    
+    display: flex;
+    flex-direction: row;
+}
+
+.lab {
+    display: flex;
     position: relative;
+}
+
+.lab div[class="duplicate"] {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.lab div[class="validity"] {
+    position: absolute;
+    right: 0;
 }
 
 // 중복 체크(버튼)
@@ -19,9 +35,7 @@ button#check-repetition {
     width: 120px;
     padding: 8px;
     height: 44px;
-    
-    position: absolute;
-    right: 0;
+
 }
 // 비밀번호 숨김 영역(버튼)
 div.hide-eye {
