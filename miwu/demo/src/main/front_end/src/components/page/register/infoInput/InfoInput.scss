@@ -9,36 +9,29 @@ h1 {
     margin-bottom: 20px;
 }
 
-.input-div {
+.info-input .input-div {
     width: 100%;    
     display: flex;
     flex-direction: row;
-}
-
-.lab {
-    display: flex;
     position: relative;
 }
 
-.lab div[class="duplicate"] {
-    margin-left: 12px;
-    margin-right: 12px;
-}
-
-.lab div[class="validity"] {
-    position: absolute;
-    right: 0;
+.info-input .lab {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
 }
 
 // 중복 체크(버튼)
-button#check-repetition {
+.info-input button#check-repetition {
     width: 120px;
     padding: 8px;
     height: 44px;
 
 }
 // 비밀번호 숨김 영역(버튼)
-div.hide-eye {
+.info-input div.hide-eye {
     width: 24px;
     height: 24px;
 
@@ -48,12 +41,16 @@ div.hide-eye {
 }
 
 // 입력하는 곳
-.input-div input {
+.info-input .input-div input {
     width: 100%;
     padding: 8px;
 }
 
 .info-input p {
     font-size: 12px;    
+}
+
+.info-input .condition {
+    margin-top: 12px;
 }
 

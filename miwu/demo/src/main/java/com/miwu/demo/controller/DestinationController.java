@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.File;
 import java.io.IOException;
 import com.opencsv.exceptions.CsvValidationException;
 
@@ -29,6 +30,9 @@ import com.miwu.demo.entity.Img;
 import com.miwu.demo.repository.DestinationRepository;
 import com.miwu.demo.repository.ImgRepository;
 
+// 
+import org.springframework.core.io.ClassPathResource;
+
 @RequiredArgsConstructor // 초기화 되지않은 final 변수에 대해 생성자를 생성
 @RestController
 public class DestinationController {
@@ -42,44 +46,45 @@ public class DestinationController {
     private CrawlingService crawlingService;
 
     @GetMapping("/destination/{location}")
-    public List<Destination> listDestination(@PathVariable("location") String location)
+    public void listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
         imgRepository.deleteAllInBatch();
 
-        String csvPath = "miwu/demo/csv/";
+        String csvPath = "/demo/csv/";
         String csvname = csvPath + location + ".csv";
+        ClassPathResource resource = new ClassPathResource("csv/부산.csv");
+        System.out.println("csv src 위치: " + resource.getFile());
+        // ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
 
-        ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
+        // for (int i = 0; i < getCsvInfo.size(); i++) {
+        // Destination dst = new Destination(
+        // getCsvInfo.get(i).get(0).toString(),
+        // getCsvInfo.get(i).get(1).toString(),
+        // getCsvInfo.get(i).get(2).toString(),
+        // getCsvInfo.get(i).get(3).toString(),
+        // getCsvInfo.get(i).get(4).toString(),
+        // getCsvInfo.get(i).get(5).toString(),
+        // getCsvInfo.get(i).get(6).toString(),
+        // getCsvInfo.get(i).get(7).toString());
 
-        for (int i = 0; i < getCsvInfo.size(); i++) {
-            Destination dst = new Destination(
-                    getCsvInfo.get(i).get(0).toString(),
-                    getCsvInfo.get(i).get(1).toString(),
-                    getCsvInfo.get(i).get(2).toString(),
-                    getCsvInfo.get(i).get(3).toString(),
-                    getCsvInfo.get(i).get(4).toString(),
-                    getCsvInfo.get(i).get(5).toString(),
-                    getCsvInfo.get(i).get(6).toString(),
-                    getCsvInfo.get(i).get(7).toString());
+        // String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
+        // String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+        // List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
+        // if (urlsInfo.size() >= 4) {
+        // System.out.println("이미지 개수: " + urlsInfo.size());
+        // Img imgUrl = new Img(adrtmpDstNm,
+        // tmpDstNm,
+        // urlsInfo.get(0),
+        // urlsInfo.get(1),
+        // urlsInfo.get(2),
+        // urlsInfo.get(3));
+        // dst.addImg(imgUrl);
+        // }
 
-            String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
-            String tmpDstNm = getCsvInfo.get(i).get(3).toString();
-            List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
-            if (urlsInfo.size() >= 4) {
-                System.out.println("이미지 개수: " + urlsInfo.size());
-                Img imgUrl = new Img(adrtmpDstNm,
-                        tmpDstNm,
-                        urlsInfo.get(0),
-                        urlsInfo.get(1),
-                        urlsInfo.get(2),
-                        urlsInfo.get(3));
-                dst.addImg(imgUrl);
-            }
-
-            destinationRepository.save(dst);
-        }
-        return destinationRepository.findAll();
+        // destinationRepository.save(dst);
+        // }
+        // return destinationRepository.findAll();
     }
 
     // 지역별 관광지 상위 10개 리턴과 상세페이지의 지역별 관광지 모두 리턴 만들기
@@ -95,20 +100,20 @@ public class DestinationController {
         return img_detail;
     }
 
-    //지역별 관광지 상위 10개 리턴
+    // 지역별 관광지 상위 10개 리턴
     @GetMapping("/img/top10/{location}")
     public List<Img> showTopDestination(@PathVariable("location") String location)
             throws IOException {
-                List<Img> tmp_des_top = imgRepository.findByAdress1(location);
-                List<Img> top10List=new ArrayList<Img>();
+        List<Img> tmp_des_top = imgRepository.findByAdress1(location);
+        List<Img> top10List = new ArrayList<Img>();
 
-                for(int i=0; i<10; i++){
-                    top10List.add(tmp_des_top.get(i));
-                }
+        for (int i = 0; i < 10; i++) {
+            top10List.add(tmp_des_top.get(i));
+        }
 
-                // 진행과정 확인용
-                System.out.println(top10List);
+        // 진행과정 확인용
+        System.out.println(top10List);
 
-                return top10List;
+        return top10List;
     }
 }

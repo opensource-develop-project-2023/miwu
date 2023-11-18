@@ -24,7 +24,8 @@ import org.springframework.stereotype.Service;
 public class CrawlingService {
 
     public static final String WEB_DRIVER_ID = "webdriver.chrome.driver";
-    public static final String WEB_DRIVER_PATH = "/Users/seon/Downloads/chromedriver-mac-arm64/chromedriver";
+    public static final String WEB_DRIVER_PATH = "/Users/rla/Desktop/chromedriver-win64/chromedriver-win64/chromedriver.exe";
+
     public List<String> getImg(String imgName) throws IOException {
         // 크롬 드라이버 설정
         System.setProperty(WEB_DRIVER_ID, WEB_DRIVER_PATH);

@@ -17,29 +17,34 @@
     padding: 8px;
 }
 
+.hint-select .lab {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 // 질문
 // -------------------------------------------------------
-.query {
+.hint-select .query {
     margin-bottom: 16px;
 }
 
-.query select {
+.hint-select .query select {
     width: calc(100% - 44px);
 }
 
-.query label {
+.hint-select .query label {
     margin-right: 12px;
 }
 // -------------------------------------------------------
 
 // 질문
 // -------------------------------------------------------
-.answer label {
+.hint-select .answer label {
     margin-right: 12px;
 }
 
-.answer input {
+.hint-select .answer input {
     width: calc(100% - 44px);
 }
 // -------------------------------------------------------
