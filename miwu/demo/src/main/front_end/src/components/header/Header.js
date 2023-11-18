@@ -18,8 +18,8 @@ function Header({loggedIn, id}) {
                     </Link>
                 </div>
                 <div className="nav-item">
-                    <Link to="/theme">
-                        <p>테마</p>
+                    <Link to="/seoul">
+                        <p>상세정보</p>
                     </Link>
                 </div>
                 <div className="nav-item">

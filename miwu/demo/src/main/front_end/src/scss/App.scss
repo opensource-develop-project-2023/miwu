@@ -129,37 +129,32 @@ li {
 
 .header {
   display: flex;
-  padding: 15px 20px;
+  padding: 15px;
   justify-content: space-between;
   background-color: white;
-  width :1300px;
+  width :1200px;
   height: 96px;
   border: 0px, 0px, 1px, 0px;
-  box-shadow: 0px 13px 28px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 50px 50px 0px rgba(0, 0, 0, 0.09);
-  box-shadow: 0px 113px 68px 0px rgba(0, 0, 0, 0.05);
-  box-shadow: 0px 202px 81px 0px rgba(0, 0, 0, 0.01); 
-  box-shadow: 0px 315px 88px 0px rgba(0, 0, 0, 0);
-  margin-bottom: 20px;
+
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
 
 .logo{
-width: 332px;
+width: 30px;
 height: 96px;
-padding: 28px, 130px, 28px, 130px;
-gap: 10px;
 display: flex;
 align-items: center;
 }
 
 
 .top-navigation{
-width: 276px;
-height: 96px;
+width: 370px;
+height: 80px;
 left: 398px;
-gap: 30px;
+gap: 64px;
 display: flex;
 background: rgba(255, 255, 255, 1);
 
@@ -183,44 +178,6 @@ text-align: center;
 
 
 }
-.search-bar{
-display: flex;
-align-items: center;
-width: 330px;
-height: 60px;
-top: 16px;
-left: 740px;
-margin-top: 20px;
-}
-.search-bar input{
-width: 248px;
-height: 24px;
-top: 18px;
-font-family: Noto Sans KR;
-font-size: 16px;
-font-weight: 400;
-line-height: 23px;
-letter-spacing: 0em;
-text-align: left;
-outline: none;
-border: none;
-}
-
-.divider{
-width: 330px;
-top: 60px;
-margin-left: 30%;
-}
-
-
-.search-icon{
-width: 36px;
-height: 36px;
-top: 12px;
-left: 294px;
-padding: 4.5px;
-margin-left: 35px;
-}
 
 
 //footer
@@ -231,11 +188,13 @@ margin-left: 35px;
   justify-content: space-between;
   position: sticky;
   background-color: black;
-  width: 1300px;
+  width: 1200px;
   height: 316px;
   top: 1776px;
   padding: 20px, 0px, 20px, 0px;
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 
 }
 
@@ -391,51 +350,53 @@ float: right;
 margin-top: 10px;
 }
 //----------------------banner
-.main-banner{
-width: 1300px;
-height: 320px;
-top: 96px;
-box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+.main-banner {
+  position: relative;
+  width: 1200px;
+  height: 320px;
+  box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-
+.main-banner-title {
+  position: absolute;
+  left: 130px;
 }
 
 .main-banner-title span {
   color: white;
   width: 469px;
-height: 106px;
-top: 72px;
-left: 130px;
-border: 1px;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
+  height: 106px;
+  position: absolute; 
+  left: 130px;
+  border: 1px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-banner-title span:nth-child(1) {
-  position :absolute;
-  left: 150px;
-  top: 190px;
+  position: absolute;
+  left: 100px;
+  top: 90px;
   color: white;
-  font-size: 30px;
+  font-size: 32px;
   font-family: TTTtangsbudaejjigaeB;
-font-size: 32px;
-font-weight: 300;
-line-height: 32px;
-letter-spacing: 0em;
-text-align: left;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: black;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .main-banner-title span:nth-child(2) {
-  position :absolute;
-  left: 150px;
-  top: 230px;
+  position: absolute;
+  left: 100px;
+  top: 130px;
   color: white;
-  font-size: 50px;
-  font-family: TTTtangsbudaejjigaeB;
   font-size: 64px;
+  font-family: TTTtangsbudaejjigaeB;
   font-weight: 500;
   line-height: 64px;
   letter-spacing: 0em;
@@ -444,27 +405,22 @@ text-align: left;
   -webkit-text-stroke-color: black;
 }
 
-
-
-
-.detail-view-btn{
+.detail-view-btn {
   width: 165px;
   height: 46px;
   color: white;
   text-align: center;
   background: black;
   padding: 8px, 16px, 8px, 16px;
-border-radius: 30px;
-gap: 12px;
-  position :absolute;
-  left: 150px;
-  top: 300px;
+  border-radius: 30px;
+  gap: 12px;
+  position: absolute;
+  left: 100px;
+  top: 200px;
   font-family: Noto Sans KR;
-font-size: 20px;
-font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
 }
-
-
 
 
 
@@ -567,11 +523,13 @@ margin-top: 20px;
 //--------------------
 
  .spotlist{
-width: 1300px;
+width: 1200px;
 height: 2900px;
 top: 456px;
 flex-direction: column;
 display: flex;
+max-width: 1200px;
+margin: 0 auto;
  }
 
  .slider{
@@ -599,7 +557,7 @@ object-fit: cover;
 }
 .chungcheong span{
   position :absolute;
-  top: 1350px;
+  top: 1330px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -627,7 +585,7 @@ display: block;
 
 .capital-area span {
   position :absolute;
-  top: 950px;
+  top: 930px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -654,7 +612,7 @@ object-fit: fill;
 }
 .gyeongsang span {
   position :absolute;
-  top: 1750px;
+  top: 1730px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -681,7 +639,7 @@ object-fit: fill;
 
 .honam span{
   position :absolute;
-  top: 2150px;
+  top: 2130px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -709,7 +667,7 @@ object-fit: fill;
 
 .jeju span{
   position :absolute;
-  top: 2950px;
+  top: 2930px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -736,7 +694,7 @@ object-fit: fill;
 
 .gangwon span{
   position :absolute;
-  top: 2550px;
+  top: 2530px;
   margin-left: 140px;
   color: white;
   font-size: 23px;
@@ -749,13 +707,15 @@ object-fit: fill;
 //--------------------------------------------------------
 //지역목록
 .area{
-  width: 1300px;
+  width: 1200px;
   height: 500px;
   top: 456px;
   padding: 0px, 38px, 80px, 38px;
   gap: 40px;
   flex-direction: column;
   display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
   }
   .area-list{
     margin-left: 95px;
@@ -783,14 +743,13 @@ object-fit: fill;
 //-------
 .restaurant-list {
   display: flex;
-  flex-wrap: wrap; /* 추가된 부분 */
-  justify-content: space-between; /* 추가된 부분 */
+  flex-wrap: wrap; 
+  justify-content: space-between; 
   margin-top: 100px;
 }
 
 .card {
-  width: calc(50% - 20px); /* 50%의 폭으로 조정, 20px는 마진 고려 */
-  height: 220px;
+  width: calc(50% - 20px);
   margin: 10px;
   padding: 10px;
   border: none;
@@ -861,20 +820,19 @@ object-fit: fill;
     
     
   //--------
-//* 이미지 크기와 스타일 조절 */
-/* 이미지 크기 고정 */
+
 .image-container img {
-  width: 250px; /* 이미지 가로 길이를 고정 (원하는 픽셀 크기로 수정) */
-  height: 200px; /* 이미지 세로 길이를 고정 (원하는 픽셀 크기로 수정) */
+  width: 250px; 
+  height: 200px; 
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* 카드 크기 고정 */
+
 .destination_card {
-  width: calc(25% - 20px); /* 한 행에 4개의 카드를 균등하게 배치하기 위해 20px 마진 제거 */
-  height: 320px; /* 카드 세로 길이를 고정 (원하는 픽셀 크기로 수정) */
+  width: calc(25% - 20px); 
+  height: 320px; 
   margin: 10px;
   padding: 10px;
   border: none;
@@ -883,7 +841,7 @@ object-fit: fill;
   transition: box-shadow 0.3s;
 }
 
-/* 두 카드를 한 행에 배치 */
+
 .destination-list {
   display: flex;
   flex-wrap: wrap;
@@ -898,8 +856,8 @@ object-fit: fill;
 }
 
 .image-container {
-  width: 100%; /* 이미지 container 가로 길이를 100%로 조절 */
-  height: 200px; /* 이미지 container 세로 길이를 고정 (원하는 픽셀 크기로 수정) */
+  width: 100%; 
+  height: 200px; 
   border-radius: 10px;
   overflow: hidden;
 }
@@ -908,9 +866,50 @@ object-fit: fill;
   margin-top: 10px;
 }
 
-/* 태그의 글씨 크기 줄임 */
+
 .tag {
   font-size: 12px;
 }
 //-------
 
+
+.centered-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .region-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      font-size: 14px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+
+      &:hover {
+        background-color: #2980b9;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+
+}
