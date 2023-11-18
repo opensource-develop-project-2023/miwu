@@ -3,9 +3,9 @@ import React from 'react';
 import ImgTest from '../imgTest/ImgTest';
 
 
-import Seouldes from '../area/Seouldes';
-import Seoulres from '../area/Seoulres';
-const Home = () => {
+import Seouldes from './Seoul/Seouldes';
+import Seoulres from './Seoul/Seoulres';
+const Seoul = () => {
     return (
         <div>
        
@@ -17,4 +17,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Seoul;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const RestaurantList = () => {
+const Gangwondes = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [visibleRestaurants, setVisibleRestaurants] = useState(10);
 
@@ -12,7 +12,7 @@ const RestaurantList = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('/api/restaurant/서울특별시');
+      const response = await axios.get('/api/restaurant/강원특별자치도');
       setRestaurants(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -24,12 +24,8 @@ const RestaurantList = () => {
   };
 
   const restaurantData = restaurants.slice(0, visibleRestaurants).map((restaurant, index) => (
-
-   <div key={index} className="card">
-   
-
+    <div key={index} className="card">
       <div className="restaurant-card-content">
-     
         <div className="restaurant-image-container">
           <img src={restaurant.r_imgUrl} alt={restaurant.r_name} />
         </div>
@@ -39,9 +35,8 @@ const RestaurantList = () => {
           <p className="category">Category: {restaurant.r_category}</p>
         </div>
       </div>
-    
+      <hr />
     </div>
-    
   ));
 
   return (
@@ -55,12 +50,9 @@ const RestaurantList = () => {
             </button>
           )}
         </div>
-        
       </div>
-   
-      </div>
-   
+    </div>
   );
 };
 
-export default RestaurantList;
+export default Gangwondes;

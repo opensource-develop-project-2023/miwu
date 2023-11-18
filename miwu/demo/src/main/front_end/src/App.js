@@ -19,6 +19,20 @@ import Theme from './components/page/Theme';
 import Seoul from './components/area/Seoul';
 import Gyeonggido from './components/area/Gyeonggi';
 import Incheon from './components/area/Incheon';
+import Daejon from './components/area/Daejon';
+import Chungnam from './components/area/Chungnam';
+import Chungbuk from './components/area/Chungbuk';
+import Sejong from './components/area/Sejong';
+import Busan from './components/area/Busan';
+import Ulsan from './components/area/Ulsan';
+import Daegu from './components/area/Daegu';
+import Gyeongnam from './components/area/Gyeongnam';
+import Gyeongbuk from './components/area/Gyeongbuk';
+import Gwangju from './components/area/Gwangju';
+import Jeonnam from './components/area/Jeonnam';
+import Jeonbuk from './components/area/Jeonbuk';
+import Gangwon from './components/area/Gangwon';
+import Jeju from './components/area/Jeju';
 function App() {
     const [LoggedIn, setLoggedIn] = useState(false);
     const [UserId, setUserId] = useState("");
@@ -55,6 +69,20 @@ function App() {
                     <Route path="/seoul" element={<Seoul />} />
                     <Route path="/gyeonggi-do" element={<Gyeonggido />} />
                     <Route path="/incheon" element={<Incheon />} />
+                    <Route path="/daejon" element={<Daejon />} />
+                    <Route path="/chungnam" element={<Chungnam />} />
+                    <Route path="/chungbuk" element={<Chungbuk />} />
+                    <Route path="/sejong" element={<Sejong />} />
+                    <Route path="/busan" element={<Busan />} />
+                    <Route path="/ulsan" element={<Ulsan />} />
+                    <Route path="/daegu" element={<Daegu />} />
+                    <Route path="/gyeongnam" element={<Gyeongnam />} />
+                    <Route path="/gyeongbuk" element={<Gyeongbuk />} />
+                    <Route path="/gwangju" element={<Gwangju />} />
+                    <Route path="/jeonnam" element={<Jeonnam />} />
+                    <Route path="/jeonbuk" element={<Jeonbuk />} />
+                    <Route path="/gangwon" element={<Gangwon />} />
+                    <Route path="/jeju" element={<Jeju />} />
                 </Routes>
             </BrowserRouter>
             <Footer />
