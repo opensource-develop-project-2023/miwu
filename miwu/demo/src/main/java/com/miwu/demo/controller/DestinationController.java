@@ -50,8 +50,12 @@ public class DestinationController {
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
         imgRepository.deleteAllInBatch();
+        String csvPath = "./demo/csv/";
 
+<<<<<<< HEAD
         String csvPath = "/demo/csv/";
+=======
+>>>>>>> 102882bd1c918ee8e9a416328de01fb7c4801ab2
         String csvname = csvPath + location + ".csv";
         ClassPathResource resource = new ClassPathResource("csv/부산.csv");
         System.out.println("csv src 위치: " + resource.getFile());

@@ -779,45 +779,55 @@ object-fit: fill;
     -webkit-text-stroke-width: 1px;
     position: relative;
     }
- 
 
-    .restaurant-list {
+//-------
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap; /* 추가된 부분 */
+  justify-content: space-between; /* 추가된 부분 */
+  margin-top: 100px;
+}
+
+.card {
+  width: calc(50% - 20px); /* 50%의 폭으로 조정, 20px는 마진 고려 */
+  height: 220px;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+}
+    .restaurant-list-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    
+    .restaurant-card-content {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
     }
     
-    .card {
-      width: 40%;
-      margin: 10px;
-      padding: 10px;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
-    
-    .card-content {
-      display: flex;
-    }
-    
-    .image-container {
+    .restaurant-image-container {
       flex: 1;
       margin-right: 10px;
       border-radius: 10px;
       overflow: hidden;
     }
     
-    .details {
+    .restaurant-details {
       flex: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
     }
     
-    .image-container img {
-      width: 100%;
-      height: auto;
+    .restaurant-image-container img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
       border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
     .name,
@@ -846,7 +856,7 @@ object-fit: fill;
     }
     
     .load-more-button:hover {
-      background-color:gray;
+      background-color: gray;
     }
     
     
@@ -902,3 +912,5 @@ object-fit: fill;
 .tag {
   font-size: 12px;
 }
+//-------
+

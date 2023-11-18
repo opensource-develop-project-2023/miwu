@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const TopDestinationList = () => {
+const Seouldes = () => {
   const [topDestinations, setTopDestinations] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -55,11 +55,11 @@ const TopDestinationList = () => {
               <p className="tag">{destination.tag}</p>
             </div>
           </div>
-          <hr />
+      
         </div>
       ))}
     </div>
   );
 };
 
-export default TopDestinationList;
+export default Seouldes;

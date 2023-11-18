@@ -1,55 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import ImgTest from '../imgTest/ImgTest';
 
-const RestaurantList = () => {
-  const [restaurants, setRestaurants] = useState([]);
-  const [visibleRestaurants, setVisibleRestaurants] = useState(10);
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+import Incheondes from './Incheon/Incheondes';
+import Incheonres from './Incheon/Incheonres';
+const Incheon = () => {
+    return (
+        <div>
+       
+           <Incheondes />
+           <Incheonres />
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get('/api/restaurant/인천광역시');
-      setRestaurants(response.data);
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-
-  const loadMore = () => {
-    setVisibleRestaurants((prevVisible) => prevVisible + 10);
-  };
-
-  const restaurantData = restaurants.slice(0, visibleRestaurants).map((restaurant, index) => (
-    <div key={index} className="card">
-      <div className="card-content">
-        <div className="image-container">
-          <img src={restaurant.r_imgUrl} alt={restaurant.r_name} />
+           
         </div>
-        <div className="details">
-          <p className="name">Name: {restaurant.r_name}</p>
-          <p className="address">Address: {restaurant.r_adress}</p>
-          <p className="category">Category: {restaurant.r_category}</p>
-        </div>
-      </div>
-      <hr />
-    </div>
-  ));
+    );
+}
 
-  return (
-    <div className="restaurant-list">
-      {restaurantData}
-      <div className="load-more-container">
-        {restaurants.length > visibleRestaurants && (
-          <button className="load-more-button" onClick={loadMore}>
-            더보기
-          </button>
-        )}
-      </div>
-    </div>
-  );
-};
-
-export default RestaurantList;
+export default Incheon;
