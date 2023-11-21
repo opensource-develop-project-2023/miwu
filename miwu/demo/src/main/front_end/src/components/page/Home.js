@@ -11,7 +11,6 @@ const Home = () => {
             <ImgTest />
              <Search />
             <Arealist />
-        
            
         </div>
     );

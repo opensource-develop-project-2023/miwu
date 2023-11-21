@@ -16,15 +16,15 @@ public interface ImgRepository extends JpaRepository<Img, Long> {
     @Override
     List<Img> findAll(); // 조건없이 테이블의 전체 레코드 조회
 
-    List<Img> findByroadAdress(String roadAdress); // 관광지 광역시/도 를 기반으로 조회
+    List<Img> findByAdress1(String adress1); // 관광지 광역시/도 를 기반으로 조회
 
-    List<Img> findByroadAdressLike(String keyword);
+    List<Img> findByAdress1Like(String keyword);
     List<Img> findByDestNameLike(String keyword);
     List<Img> findByTagLike(String keyword);
     boolean existsByDestNameLike(String keyword);
 
     @Transactional
-    @Query(value = "SELECT * FROM Img WHERE destName LIKE CONCAT('%', :searchValue, '%') OR roadAdress LIKE CONCAT('%', :searchValue, '%') OR tag LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM Img WHERE dest_name LIKE CONCAT('%', :searchValue, '%') OR adress1 LIKE CONCAT('%', :searchValue, '%') OR tag LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
     List<Img> findBySearchValue(@Param("searchValue") String searchValue);
 
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제

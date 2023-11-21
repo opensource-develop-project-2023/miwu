@@ -29,19 +29,19 @@ public class Restaurant {
     private Long id;
 
     // 광역시/도
-    @Column(name = "roadAdress", nullable = false, length = 45)
-    private String roadAdress;
+    @Column(name = "adress1", nullable = false, length = 45)
+    private String adress1;
 
     // 맛집 이름
-    @Column(name = "restName", nullable = false, length = 2083)
+    @Column(name = "r_name", nullable = false, length = 2083)
     private String restName;
 
     // 맛집 주소
-    @Column(name = "restAdress", nullable = false, length = 2083)
+    @Column(name = "r_adress", nullable = false, length = 2083)
     private String restAdress;
 
     // 카테고리
-    @Column(name = "restCategory", nullable = false, length = 2083)
+    @Column(name = "r_category", nullable = false, length = 2083)
     private String restCategory;
 
     // 맛집 이미지 url
@@ -49,8 +49,8 @@ public class Restaurant {
     private String r_imgUrl;
 
     // 생성자
-    public Restaurant(String roadAdress, String restName, String restAdress, String restCategory, String r_imgUrl) {
-        this.roadAdress = roadAdress;
+    public Restaurant(String adress1, String restName, String restAdress, String restCategory, String r_imgUrl) {
+        this.adress1 = adress1;
         this.restName = restName;
         this.restAdress = restAdress;
         this.restCategory = restCategory;

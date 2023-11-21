@@ -49,7 +49,7 @@ public class SearchController {
         List<Img> tmp = new ArrayList<>();
         List<Destination> tmp2 = new ArrayList<>();
         if("region".equals(searchType)) {
-            tmp= imgRepository.findByroadAdressLike(searchKeyword);
+            tmp= imgRepository.findByAdress1Like(searchKeyword);
         } else if ("destination".equals(searchType)) {
             tmp= imgRepository.findByDestNameLike(searchKeyword);
         } else if("tag".equals(searchType)) {
@@ -62,7 +62,7 @@ public class SearchController {
 
         for (int i = 0; i < tmp.size(); i++) {
             Map<String, String> imgData = new HashMap<>();
-            imgData.put("roadAdress", tmp.get(i).getroadAdress());
+            imgData.put("roadAdress", tmp.get(i).getAdress1());
             imgData.put("destName", tmp.get(i).getDestName());
             imgData.put("tag", tmp.get(i).getTag());
             imgData.put("url1", tmp.get(i).getUrl1());
@@ -83,7 +83,7 @@ public class SearchController {
         for (int i = 0; i < tmp.size(); i++) {
 
             Map<String, String> restData = new HashMap<>();
-            restData.put("roadAdress", tmp.get(i).getroadAdress());
+            restData.put("roadAdress", tmp.get(i).getAdress1());
             restData.put("restName", tmp.get(i).getRestName());
             restData.put("restAdress", tmp.get(i).getRestAdress());
             restData.put("restCategory", tmp.get(i).getRestCategory());

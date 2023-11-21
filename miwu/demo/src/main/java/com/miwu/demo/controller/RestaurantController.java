@@ -76,7 +76,7 @@ public class RestaurantController {
      그리고 한번에 전부 리턴 되는 데  res1.get(0) 이렇게 해보면 인데스 하나 당 맛집 1개 정보씩 볼수 있을 겁니다.*/
     public List<Restaurant> showRestaurants(@PathVariable("roadAdress") String adress)
      throws IOException {
-            List<Restaurant> res1 = restaurantRepository.findByroadAdress(adress);
+            List<Restaurant> res1 = restaurantRepository.findByAdress1(adress);
 
             // 진행과정 확인용
             System.out.println(res1);
