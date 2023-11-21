@@ -43,7 +43,7 @@ public class RestaurantController {
 
         for(int k=0; k<17; k++){
             
-            // 맛집 정보(다른 테이블), r_tmpAdr은 지역명임(adress1)
+            // 맛집 정보(다른 테이블), r_tmpAdr은 지역명임(roadAdress)
             String r_tmpAdr=adress_list[k]; //adress_list 의 지역명 가져옴
 
             // r_tmpAdr 이 RestaurantService로 매개변수(restaurantName) 보내주는 역할
@@ -70,13 +70,13 @@ public class RestaurantController {
     }
 
     // DB에서  특정 지역 맛집 보내기(+이미지 포함)
-    @GetMapping("/restaurant/{adress1}")
-    /* "http://localhost:8080/restaurant/" 주소 다음에 adress1에 한글로 광역시/도 입력해주면 됩니다.
+    @GetMapping("/restaurant/{roadAdress}")
+    /* "http://localhost:8080/restaurant/" 주소 다음에 roadAdress에 한글로 광역시/도 입력해주면 됩니다.
     ex) http://localhost:8080/restaurant/부산광역시 라고 치면 DB에서 부산광역시 맛집 전부 리턴해 줍니다.
      그리고 한번에 전부 리턴 되는 데  res1.get(0) 이렇게 해보면 인데스 하나 당 맛집 1개 정보씩 볼수 있을 겁니다.*/
-    public List<Restaurant> showRestaurants(@PathVariable("adress1") String adress)
+    public List<Restaurant> showRestaurants(@PathVariable("roadAdress") String adress)
      throws IOException {
-            List<Restaurant> res1 = restaurantRepository.findByAdress1(adress);
+            List<Restaurant> res1 = restaurantRepository.findByroadAdress(adress);
 
             // 진행과정 확인용
             System.out.println(res1);

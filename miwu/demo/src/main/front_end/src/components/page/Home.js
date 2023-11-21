@@ -9,8 +9,9 @@ const Home = () => {
     return (
         <div>
             <ImgTest />
+             <Search />
             <Arealist />
-            <Search />
+        
            
         </div>
     );

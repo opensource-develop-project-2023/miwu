@@ -72,31 +72,32 @@ const SearchComponent = () => {
 
   return (
     <div>
-      <select value={searchType} onChange={updateSearchType}>
-        <option value="all">전체</option>
-        <option value="region">광역시도명</option>
-        <option value="destination">관광지명</option>
-        <option value="tag">태그</option>
-        <option value="restaurant">식당</option>
+      <div className="search-container">
+        <select value={searchType} onChange={updateSearchType}>
+          <option value="all">전체</option>
+          <option value="region">광역시도명</option>
+          <option value="destination">관광지명</option>
+          <option value="tag">태그</option>
+          <option value="restaurant">식당</option>
         </select>
-      <input
-        type="text"
-        placeholder="검색어 입력"
-        value={keyword}
-        onChange={updateKeyword}
-        onKeyPress={handleKeyPress}
-      />
-      <button onClick={() => { handleSearch();}} disabled={!keywordValidity || loading}>
-        검색
-      </button>
-
+        <input
+          type="text"
+          placeholder="검색어 입력"
+          value={keyword}
+          onChange={updateKeyword}
+          onKeyPress={handleKeyPress}
+        />
+        <button onClick={() => { handleSearch(); }} disabled={!keywordValidity || loading}>
+          검색
+        </button>
+      </div>
       <div className="result-list">
         {loading && <p>로딩 중...</p>}
         {!loading && searchResult.map((item, index) => (
           <div key={index} className="result-item">
             <div className="card-content">
-              <div className="image-container">
-              {(item.url1 || item.r_imgUrl) && <img src={item.url1 || item.r_imgUrl} alt={item.adress1} />}
+              <div className="result-image-container">
+              {(item.url1 || item.r_imgUrl) && <img src={item.url1 || item.r_imgUrl} alt={item.roadAdress} />}
             </div>
             </div>
             <div className="details">

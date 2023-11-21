@@ -34,8 +34,8 @@ public class UserInfo {
     private String userId;
 
     // 유저 name
-    @Column(name = "user_name", nullable = false, length = 100)
-    private String user_name;
+    @Column(name = "userestName", nullable = false, length = 100)
+    private String userestName;
 
     // 패스워드
     @Column(name = "password", nullable = false, length = 100)
@@ -50,9 +50,9 @@ public class UserInfo {
     private String answer;
 
     // 생성자
-    public UserInfo(String userId, String password, String user_name, String question, String answer) {
+    public UserInfo(String userId, String password, String userestName, String question, String answer) {
         this.userId = userId;
-        this.user_name = user_name;
+        this.userestName = userestName;
         this.password = password;
         this.question = question;
         this.answer = answer;

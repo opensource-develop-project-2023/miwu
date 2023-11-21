@@ -87,7 +87,7 @@ public class DestinationController {
     @GetMapping("/img/detail/{location}")
     public List<Img> showDestination(@PathVariable("location") String location)
             throws IOException {
-        List<Img> img_detail = imgRepository.findByAdress1(location);
+        List<Img> img_detail = imgRepository.findByroadAdress(location);
 
         // 진행과정 확인용
         System.out.println(img_detail);
@@ -99,7 +99,7 @@ public class DestinationController {
     @GetMapping("/img/top10/{location}")
     public List<Img> showTopDestination(@PathVariable("location") String location)
             throws IOException {
-                List<Img> tmp_des_top = imgRepository.findByAdress1(location);
+                List<Img> tmp_des_top = imgRepository.findByroadAdress(location);
                 List<Img> top10List=new ArrayList<Img>();
 
                 for(int i=0; i<10; i++){

@@ -44,15 +44,15 @@ public class Destination {
     private String rank_number;
 
     // 광역시/도
-    @Column(name = "adress1", nullable = false, length = 45)
-    private String adress1;
+    @Column(name = "roadAdress", nullable = false, length = 45)
+    private String roadAdress;
 
     // 시/군/구
     @Column(name = "adress2", nullable = false, length = 45)
     private String adress2;
 
     // 관광지명 (not null, varchar(45))
-    @Column(name = "dest_name", nullable = false, length = 45)
+    @Column(name = "destName", nullable = false, length = 45)
     private String destName;
 
     // 도로명주소
@@ -72,18 +72,18 @@ public class Destination {
     private String search_number;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "dest_name", insertable = false, updatable = false)
+    @JoinColumn(name = "destName", insertable = false, updatable = false)
     private List<Img> img;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "adress1", insertable = false, updatable = false)
-    private List<Img> img_adress1;
+    @JoinColumn(name = "roadAdress", insertable = false, updatable = false)
+    private List<Img> img_roadAdress;
 
     // 생성자
-    public Destination(String rank_number, String adress1, String adress2,
+    public Destination(String rank_number, String roadAdress, String adress2,
             String destName, String roadAdress, String m_category, String s_category, String search_number) {
         this.rank_number = rank_number;
-        this.adress1 = adress1;
+        this.roadAdress = roadAdress;
         this.adress2 = adress2;
         this.destName = destName;
         this.roadAdress = roadAdress;

@@ -41,20 +41,20 @@ public class Img {
     private String url3;
 
     // 관광지명
-    @Column(name = "dest_name", nullable = false, length = 45)
+    @Column(name = "destName", nullable = false, length = 45)
     private String destName;
 
     // 광역시/도
-    @Column(name = "adress1", nullable = false, length = 45)
-    private String adress1;
+    @Column(name = "roadAdress", nullable = false, length = 45)
+    private String roadAdress;
 
     // 관광지 tag
     @Column(name = "tag", nullable = false, length = 2083)
     private String tag;
 
     // 생성자
-    public Img(String adress1, String destName, String url1, String url2, String url3, String tag) {
-        this.adress1 = adress1;
+    public Img(String roadAdress, String destName, String url1, String url2, String url3, String tag) {
+        this.roadAdress = roadAdress;
         this.destName = destName;
         this.url1 = url1;
         this.url2 = url2;
