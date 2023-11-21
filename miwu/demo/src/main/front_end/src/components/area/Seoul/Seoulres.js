@@ -45,7 +45,9 @@ const Seoulres = () => {
   ));
 
   return (
-    <div className="restaurant-list-container">
+    <div className="restaurant-list-header">
+  <h2>지역별 맛집 정보</h2>
+   
       <div className="restaurant-list">
         {restaurantData}
         <div className="load-more-container">
@@ -57,8 +59,8 @@ const Seoulres = () => {
         </div>
         
       </div>
-   
-      </div>
+     </div>
+  
    
   );
 };

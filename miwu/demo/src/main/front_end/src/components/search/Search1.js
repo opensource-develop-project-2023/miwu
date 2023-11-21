@@ -108,7 +108,7 @@ const SearchComponent = () => {
             </div>
         ))}
         
-        {!loading && searchResult.length === 0 && keywordValidity && <p>검색 결과가 없습니다.</p>}
+        {!loading && searchResult.length === 0 && keywordValidity && <p className="no-results">검색 결과가 없습니다.</p>}
       </div>
     </div>
   );

@@ -44,6 +44,8 @@ const Gangwondes = () => {
   };
 
   return (
+    <div className="area-top10">
+    <h2>지역별 관광지 Top 10</h2>
     <div className="destination-list">
       {topDestinations.map((destination, index) => (
         <div key={index} className={`destination_card ${index === currentSlide ? 'active' : ''}`}>
@@ -59,6 +61,7 @@ const Gangwondes = () => {
       
         </div>
       ))}
+       </div>
     </div>
   );
 };
