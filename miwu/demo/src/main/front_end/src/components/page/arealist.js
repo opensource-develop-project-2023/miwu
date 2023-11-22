@@ -10,7 +10,7 @@ const arealist = () => {
            <div className="area-header"> 
            <p>어디로 여행을 떠나고 싶으신가요?</p>
            </div>
-          
+           
 
        <div className='area-list'>
         <p>#수도권</p>
@@ -173,7 +173,4 @@ const arealist = () => {
 }
 
 export default arealist;
-
-
-
 
