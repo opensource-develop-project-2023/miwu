@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate, Link } from 'react-router-dom';
 const History = ({id, logout}) => {
     return (
         <div id="history">

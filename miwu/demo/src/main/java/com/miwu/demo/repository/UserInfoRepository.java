@@ -11,7 +11,13 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
     @Override
     List<UserInfo> findAll(); // 조건없이 테이블의 전체 레코드 조회
 
-    boolean existsByuserId(String userId);
+    boolean existsByuserId(String userId); // 유저 아이디로 유저 존재 여부 확인
+
+    boolean existsBypassword(String password); // 패스워드로 유저 존재 여부 확인
+
+    UserInfo findByuserId(String userId); // 유저 아이디로 유저 조회
+
+    List<UserInfo> findByuserName(String userName);
 
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제
 }

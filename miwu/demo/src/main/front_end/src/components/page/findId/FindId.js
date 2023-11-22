@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./FindId.scss";
 
 import axios from 'axios';
@@ -7,23 +7,27 @@ const FindId = () => {
     const [name, setName] = useState("");
     const [userName, setUserName] = useState("");
     const [nameValidity, setNameValidity] = useState(false);
-    const [id, setId] = useState("");
+
+    const [foundId, setFoundId] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [idData, setIdData] = useState([]);
+    const [idList, setIdList] = useState([]);
 
     const updateName = (event) => {
         setName(event.currentTarget.value);
-        setNameValidity(checkNameValidity(name));
+        setFoundId(false);
+        setIdData([]);
     } // 이름 값이 변경되면, 상태값도 업데이트함
     
-    const checkNameValidity = (name) => { // 이름 유효성 검사
-        return /[가-힣]{2,4}$/.test(name); 
-    }
-
     const onSubmit = (event) => { // 회원가입 버튼 눌렀을 때 실행되는 함수
         event.preventDefault();
-        
+        if (!foundId) {
+            setFoundId(true);
+        }
+        setLoading(true);
         axios.post('/api/find_id', 
             {
-                name: name
+                user_name: name
             },
             {
                 headers: {
@@ -32,15 +36,21 @@ const FindId = () => {
             }
         )
         .then((response) => {
+            setLoading(false);
             setUserName(name);
-            setId(response.data);
+            setIdData(response.data);
         })
         .catch((error) => { // 실패했을 경우 에러 출력
-            setUserName(name); // 테스트 코드입니다. 백엔드 기능 구현되면 제거하겠습니다. 
-            setId("root"); // 테스트 코드입니다.
             console.log(error);
         })
     }
+    useEffect(() => {
+        const updatedIdList = idData.map((id, index) => (
+            <li key={index}>{id}</li>
+        ));
+        setIdList(updatedIdList);
+    }, [idData]);
+    
 
     return (
         <div id="find-id">
@@ -56,19 +66,30 @@ const FindId = () => {
                 />
             </div>
             {
-                (id === "") ? 
-                <></> : 
-                <div id="id-info">
-                    <p>가입된 아이디가 있습니다</p>
-                    <div>
-                        <p>이름</p>
-                        <p>{userName}</p>
-                    </div>
-                    <div>
-                        <p>계정</p>
-                        <p>{id}</p>
-                    </div>
-                </div>
+                (!foundId) ? 
+                <></> :
+                <>
+                {
+                    (loading) ?
+                    <div className="id-info">
+                        <p></p>
+                    </div> :
+                    <>
+                    {  
+                        (idData.length !== 0) ?
+                        <div className="id-info">
+                            <p id="id-num">가입된 아이디가 <span>{idData.length}개</span> 있습니다</p>
+                            <ul>
+                                {idList}
+                            </ul>
+                        </div> : 
+                        <div className="id-info">
+                            <p>가입된 아이디가 없습니다.</p>
+                        </div>
+                    }
+                    </>    
+                } 
+                </>
             }
             <button onClick={onSubmit} className="btn btn-outline-primary">아이디 찾기</button>
         </div>

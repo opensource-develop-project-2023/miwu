@@ -11,7 +11,7 @@ import Login from './components/page/login/Login';
 import Register from './components/page/register/register/Register';
 
 import FindId from './components/page/findId/FindId';
-import FindPw from './components/page/findPw/FindPw';
+import FindPw from './components/page/findPw/findPw/FindPw';
 
 import MyPage from './components/page/myPage/MyPage';
 import Local from './components/page/Local';
@@ -36,7 +36,6 @@ import Jeju from './components/area/Jeju';
 function App() {
     const [LoggedIn, setLoggedIn] = useState(false);
     const [UserId, setUserId] = useState("");
-    
     const login = (id) => { 
         setLoggedIn(true);
         setUserId(id);
@@ -44,25 +43,21 @@ function App() {
     
     const logout = () => {
         setLoggedIn(false);
-        setUserId("");
-    }
-
-    const [I, setI] = useState(0);
-    function plus() {
-        setI(I + 1);
+        setUserId(""); 
     }
 
     return ( 
         <div className="App">
+
             <BrowserRouter>
-                <Header loggedIn={LoggedIn} id={UserId} />
+                <Header loggedIn={LoggedIn} logout={logout} id={UserId} />  
                 <Routes>
                     <Route path="/" element={<Home />} />  
                     <Route path= "/login" element={<Login login={login} /> } />
                     <Route path="/register" element={<Register />} />
                     <Route path="find_id" element={<FindId />} />
                     <Route path="find_pw" element={<FindPw />} />
-                    <Route path="/my_page/*" element={<MyPage id={UserId} logout={logout}/> } />
+                    <Route path="/mypage/*" element={<MyPage id={UserId} logout={logout}/> } />
                     <Route path="/theme" element={<Theme />} />
                     <Route path="/local" element={<Local />} />
                     <Route path="*" element={<Navigate replace to="/" />} /> 
@@ -84,8 +79,8 @@ function App() {
                     <Route path="/gangwon" element={<Gangwon />} />
                     <Route path="/jeju" element={<Jeju />} />
                 </Routes>
+                <Footer />
             </BrowserRouter>
-            <Footer />
         </div>
     );
 }

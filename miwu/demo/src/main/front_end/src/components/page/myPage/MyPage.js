@@ -1,16 +1,12 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, useNavigate, Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+
 import History from './History';
 import Bookmark from './Bookmark';
-import Privacy from './Privacy';
+import Privacy from './privacy/privacy/Privacy';
+
 const MyPage = ({id, logout}) => {
-    const navigate = useNavigate();
-    
-    function onClickHandler(event) {
-        navigate("/");
-        logout();
-    }
-    
+
     class Menu {
         constructor(name, link, tag) {
             this.name = name;
@@ -36,9 +32,8 @@ const MyPage = ({id, logout}) => {
             <Routes>    
                 <Route path="/history" element={<History />} />  
                 <Route path= "/bookmark" element={<Bookmark /> } />
-                <Route path="/privacy" element={<Privacy />} />
+                <Route path="/privacy" element={<Privacy id={id}/>} />
             </Routes>
-            <button onClick={onClickHandler}>로그아웃</button>
         </div>
     );
 }

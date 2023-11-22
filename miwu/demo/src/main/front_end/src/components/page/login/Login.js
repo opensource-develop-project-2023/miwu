@@ -11,10 +11,7 @@ const Login = ({login}) => {
 
     const [idValidity, setIdValidity] = useState(false);
     const [pwValidity, setPwValidity] = useState(false);
-    
-    const realId = "root";
-    const realPw = "1q2w3e4r!";
-    
+
     const navigate = useNavigate();
 
     const updateId = (event) => {    
@@ -39,7 +36,6 @@ const Login = ({login}) => {
 
     const onSubmit = (event)  => {
         event.preventDefault(); 
-            
         axios.post('/api/login', 
             {
                 user_id: id,
@@ -52,20 +48,16 @@ const Login = ({login}) => {
             }
         )
         .then((response) => {
-            if (response.data == true) { // 아이디와 비밀번호가 일치한다면
-                login(id); // 해당하는 아이디로 로그인
-                navigate("/"); // 홈 화면으로 이동
+            if (response.data == true) {
+                console.log(response);
+                login(id);
+                navigate("/");
             } else {
                 setWarning("가입되어 있지 않은 아이디이거나, 잘못된 비밀번호입니다.");    
             }
         })
         .catch((error) => { // 실패했을 경우 에러 출력
-            if ((id === realId) && (pw === realPw)) { // 백엔드 기능이 구현되기 전까지 쓰는 테스트 코드입니다.
-                login(id); // 해당하는 아이디로 로그인
-                navigate("/"); // 홈 화면으로 이동
-            }
             console.log(error);
-            setWarning("가입되어 있지 않은 아이디이거나, 잘못된 비밀번호입니다.");  
         })       
     }
     
@@ -81,7 +73,7 @@ const Login = ({login}) => {
                     placeholder="아이디" 
                     onChange={updateId}
                 />
-                </div>
+            </div>
             <div className="input-div">
                 <label>비밀번호</label>
                 <input 

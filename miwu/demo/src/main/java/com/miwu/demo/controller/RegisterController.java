@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 // RequestBody
 import org.springframework.web.bind.annotation.RequestBody;
 
-// Img Entity
 import com.miwu.demo.entity.UserInfo;
-// Restaurant Repository
 import com.miwu.demo.repository.UserInfoRepository;
 
 import java.util.ArrayList;
@@ -43,18 +41,16 @@ public class RegisterController {
                     userInfoList.get(3), // question
                     userInfoList.get(4)); // answer
             userInfoRepository.save(userInfo);
-            
+
             // 출력값 확인
-            for(int i = 0; i < userInfoList.size();i++) {
-            System.out.println(userInfoList.get(i));
-            } 
+            for (int i = 0; i < userInfoList.size(); i++) {
+                System.out.println(userInfoList.get(i));
+            }
             return true;
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
-            }
         }
-
+    }
 
 }
