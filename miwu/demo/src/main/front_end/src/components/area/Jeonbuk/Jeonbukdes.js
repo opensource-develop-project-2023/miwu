@@ -43,21 +43,24 @@ const Jeonbukdes = () => {
   };
 
   return (
+    <div className="area-top10">
+    <h2>지역별 관광지 Top 10</h2>
     <div className="destination-list">
       {topDestinations.map((destination, index) => (
         <div key={index} className={`destination_card ${index === currentSlide ? 'active' : ''}`}>
           <div className="card-content">
             <div className="image-container">
-              <img src={destination[`url${currentImageIndex + 1}`]} alt={destination.adress1} />
+              <img src={destination[`url${currentImageIndex + 1}`]} alt={destination.roadAdress} />
             </div>
             <div className="details">
-              <p className="name">Name: {destination.dest_name}</p>
+              <p className="name">Name: {destination.destName}</p>
               <p className="tag">{destination.tag}</p>
             </div>
           </div>
       
         </div>
       ))}
+    </div>
     </div>
   );
 };

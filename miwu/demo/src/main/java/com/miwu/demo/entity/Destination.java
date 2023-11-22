@@ -53,11 +53,11 @@ public class Destination {
 
     // 관광지명 (not null, varchar(45))
     @Column(name = "dest_name", nullable = false, length = 45)
-    private String dest_name;
+    private String destName;
 
     // 도로명주소
     @Column(name = "road_adress", nullable = false, length = 200)
-    private String road_adress;
+    private String roadAdress;
 
     // 중분류 카테고리
     @Column(name = "m_category", nullable = false, length = 200)
@@ -81,12 +81,12 @@ public class Destination {
 
     // 생성자
     public Destination(String rank_number, String adress1, String adress2,
-            String dest_name, String road_adress, String m_category, String s_category, String search_number) {
+            String destName, String roadAdress, String m_category, String s_category, String search_number) {
         this.rank_number = rank_number;
         this.adress1 = adress1;
         this.adress2 = adress2;
-        this.dest_name = dest_name;
-        this.road_adress = road_adress;
+        this.destName = destName;
+        this.roadAdress = roadAdress;
         this.m_category = m_category;
         this.s_category = s_category;
         this.search_number = search_number;

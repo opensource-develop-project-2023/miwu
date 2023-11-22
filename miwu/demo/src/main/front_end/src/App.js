@@ -33,6 +33,9 @@ import Jeonnam from './components/area/Jeonnam';
 import Jeonbuk from './components/area/Jeonbuk';
 import Gangwon from './components/area/Gangwon';
 import Jeju from './components/area/Jeju';
+
+import Search from './components/search/Search1';
+
 function App() {
     const [LoggedIn, setLoggedIn] = useState(false);
     const [UserId, setUserId] = useState("");
@@ -78,6 +81,7 @@ function App() {
                     <Route path="/jeonbuk" element={<Jeonbuk />} />
                     <Route path="/gangwon" element={<Gangwon />} />
                     <Route path="/jeju" element={<Jeju />} />
+                    <Route path="/search" element={<Search />} />
                 </Routes>
                 <Footer />
             </BrowserRouter>

@@ -48,10 +48,12 @@ public class DestinationController {
     @GetMapping("/destination/{location}")
     public List<Destination> listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
-        destinationRepository.deleteAllInBatch();
-        imgRepository.deleteAllInBatch();
-        String csvPath = "/demo/csv/";
+        // destinationRepository.deleteAllInBatch();
+        // imgRepository.deleteAllInBatch();
+        String csvPath = "./demo/csv/";
+
         String csvname = csvPath + location + ".csv";
+
         ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
 
         for (int i = 0; i < getCsvInfo.size(); i++) {
@@ -113,4 +115,6 @@ public class DestinationController {
 
         return top10List;
     }
+
+    // 카테고리 별로 3개씩 관광지 데이터 다 보내기(전국.csv에서 읽어오는 것으로), 카테고리, 관광지 명만
 }

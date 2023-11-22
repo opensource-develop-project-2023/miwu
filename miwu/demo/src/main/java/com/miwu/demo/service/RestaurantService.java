@@ -48,15 +48,15 @@ public class RestaurantService {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
         String name; // 음식점 이름
-        String adress1;
+        String roadAdress;
         String adress_last; // 주소
         String category; // 분류
         String imgUrl; // 이미지
 
         // 크롤링한 데이터 담아두는 배열
-        // List<String> r_name = new ArrayList<>();
-        // List<String> r_adress1 = new ArrayList<>();
-        // List<String> r_category = new ArrayList<>();
+        // List<String> restName = new ArrayList<>();
+        // List<String> restroadAdress = new ArrayList<>();
+        // List<String> restCategory = new ArrayList<>();
         // List<String> r_imgUrl = new ArrayList<>();
         List<String> resList = new ArrayList<>();
 
@@ -65,9 +65,9 @@ public class RestaurantService {
             try {
                 name = driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li[" + i + "]/div[1]/a[2]/div/strong"))
                         .getText();
-                adress1 = driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li[" + i + "]/div[1]/div[1]/div/a"))
+                roadAdress = driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li[" + i + "]/div[1]/div[1]/div/a"))
                         .getText();
-                adress_last = adress1.substring(5); // '주소보기' 문자열 지움
+                adress_last = roadAdress.substring(5); // '주소보기' 문자열 지움
                 category = driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li[" + i + "]/div[1]/a[2]/div/em"))
                         .getText();
                 imgUrl = driver.findElement(By.xpath("//*[@id=\"ct\"]/div[2]/ul/li[" + i + "]/div[1]/a[1]/img"))
@@ -76,9 +76,9 @@ public class RestaurantService {
                 // 끝까지 스크롤 다운
                 jse.executeScript("window.scrollBy(0, document.body.scrollHeight)");
 
-                // r_name.add(name);
-                // r_adress1.add(adress_last);
-                // r_category.add(category);
+                // restName.add(name);
+                // restroadAdress.add(adress_last);
+                // restCategory.add(category);
                 // r_imgUrl.add(imgUrl);
                 resList.add(name);
                 resList.add(adress_last);
@@ -87,7 +87,7 @@ public class RestaurantService {
 
             } catch (Exception e) {
                 name = "";
-                adress1 = "";
+                roadAdress = "";
                 category = "";
                 imgUrl = "";
             }

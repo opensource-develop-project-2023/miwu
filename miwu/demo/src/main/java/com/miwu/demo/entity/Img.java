@@ -42,7 +42,7 @@ public class Img {
 
     // 관광지명
     @Column(name = "dest_name", nullable = false, length = 45)
-    private String dest_name;
+    private String destName;
 
     // 광역시/도
     @Column(name = "adress1", nullable = false, length = 45)
@@ -53,9 +53,9 @@ public class Img {
     private String tag;
 
     // 생성자
-    public Img(String adress1, String dest_name, String url1, String url2, String url3, String tag) {
+    public Img(String adress1, String destName, String url1, String url2, String url3, String tag) {
         this.adress1 = adress1;
-        this.dest_name = dest_name;
+        this.destName = destName;
         this.url1 = url1;
         this.url2 = url2;
         this.url3 = url3;

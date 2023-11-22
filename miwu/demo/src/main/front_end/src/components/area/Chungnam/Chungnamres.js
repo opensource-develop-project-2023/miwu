@@ -27,12 +27,12 @@ const Daejonres = () => {
     <div key={index} className="card">
       <div className="restaurant-card-content">
         <div className="restaurant-image-container">
-          <img src={restaurant.r_imgUrl} alt={restaurant.r_name} />
+          <img src={restaurant.r_imgUrl} alt={restaurant.restName} />
         </div>
         <div className="restaurant-details">
-          <p className="name">Name: {restaurant.r_name}</p>
-          <p className="address">Address: {restaurant.r_adress}</p>
-          <p className="category">Category: {restaurant.r_category}</p>
+          <p className="name">Name: {restaurant.restName}</p>
+          <p className="address">Address: {restaurant.restAdress}</p>
+          <p className="category">Category: {restaurant.restCategory}</p>
         </div>
       </div>
       <hr />
@@ -40,7 +40,8 @@ const Daejonres = () => {
   ));
 
   return (
-    <div className="restaurant-list-container">
+     <div className="restaurant-list-header">
+  <h2>지역별 맛집 정보</h2>
       <div className="restaurant-list">
         {restaurantData}
         <div className="load-more-container">

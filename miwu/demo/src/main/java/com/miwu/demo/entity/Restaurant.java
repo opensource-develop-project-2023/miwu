@@ -34,26 +34,26 @@ public class Restaurant {
 
     // 맛집 이름
     @Column(name = "r_name", nullable = false, length = 2083)
-    private String r_name;
+    private String restName;
 
     // 맛집 주소
     @Column(name = "r_adress", nullable = false, length = 2083)
-    private String r_adress;
+    private String restAdress;
 
     // 카테고리
     @Column(name = "r_category", nullable = false, length = 2083)
-    private String r_category;
+    private String restCategory;
 
     // 맛집 이미지 url
     @Column(name = "r_imgUrl", nullable = false, length = 2083)
     private String r_imgUrl;
 
     // 생성자
-    public Restaurant(String adress1, String r_name, String r_adress, String r_category, String r_imgUrl) {
+    public Restaurant(String adress1, String restName, String restAdress, String restCategory, String r_imgUrl) {
         this.adress1 = adress1;
-        this.r_name = r_name;
-        this.r_adress = r_adress;
-        this.r_category = r_category;
+        this.restName = restName;
+        this.restAdress = restAdress;
+        this.restCategory = restCategory;
         this.r_imgUrl = r_imgUrl;
     }
 }

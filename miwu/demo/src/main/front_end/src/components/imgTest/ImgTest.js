@@ -11,7 +11,7 @@ const ImgTest = (props) => {
       
           <span>설산 힐링 여행</span>
       
-          <button className='detail-view-btn'> 자세히 보기 &gt; </button>
+          
      
           </div>
         </div>
