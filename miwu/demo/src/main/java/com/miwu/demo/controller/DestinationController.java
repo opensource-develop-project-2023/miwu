@@ -111,4 +111,6 @@ public class DestinationController {
 
                 return top10List;
     }
+
+    // 카테고리 별로 3개씩 관광지 데이터 다 보내기(전국.csv에서 읽어오는 것으로), 카테고리, 관광지 명만 
 }
