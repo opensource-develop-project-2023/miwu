@@ -46,49 +46,42 @@ public class DestinationController {
     private CrawlingService crawlingService;
 
     @GetMapping("/destination/{location}")
-    public void listDestination(@PathVariable("location") String location)
+    public List<Destination> listDestination(@PathVariable("location") String location)
             throws CsvValidationException, IOException {
         destinationRepository.deleteAllInBatch();
         imgRepository.deleteAllInBatch();
-        String csvPath = "./demo/csv/";
-
-<<<<<<< HEAD
         String csvPath = "/demo/csv/";
-=======
->>>>>>> 102882bd1c918ee8e9a416328de01fb7c4801ab2
         String csvname = csvPath + location + ".csv";
-        ClassPathResource resource = new ClassPathResource("csv/부산.csv");
-        System.out.println("csv src 위치: " + resource.getFile());
-        // ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
+        ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
 
-        // for (int i = 0; i < getCsvInfo.size(); i++) {
-        // Destination dst = new Destination(
-        // getCsvInfo.get(i).get(0).toString(),
-        // getCsvInfo.get(i).get(1).toString(),
-        // getCsvInfo.get(i).get(2).toString(),
-        // getCsvInfo.get(i).get(3).toString(),
-        // getCsvInfo.get(i).get(4).toString(),
-        // getCsvInfo.get(i).get(5).toString(),
-        // getCsvInfo.get(i).get(6).toString(),
-        // getCsvInfo.get(i).get(7).toString());
+        for (int i = 0; i < getCsvInfo.size(); i++) {
+            Destination dst = new Destination(
+                    getCsvInfo.get(i).get(0).toString(),
+                    getCsvInfo.get(i).get(1).toString(),
+                    getCsvInfo.get(i).get(2).toString(),
+                    getCsvInfo.get(i).get(3).toString(),
+                    getCsvInfo.get(i).get(4).toString(),
+                    getCsvInfo.get(i).get(5).toString(),
+                    getCsvInfo.get(i).get(6).toString(),
+                    getCsvInfo.get(i).get(7).toString());
 
-        // String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
-        // String tmpDstNm = getCsvInfo.get(i).get(3).toString();
-        // List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
-        // if (urlsInfo.size() >= 4) {
-        // System.out.println("이미지 개수: " + urlsInfo.size());
-        // Img imgUrl = new Img(adrtmpDstNm,
-        // tmpDstNm,
-        // urlsInfo.get(0),
-        // urlsInfo.get(1),
-        // urlsInfo.get(2),
-        // urlsInfo.get(3));
-        // dst.addImg(imgUrl);
-        // }
+            String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
+            String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+            List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
+            if (urlsInfo.size() >= 4) {
+                System.out.println("이미지 개수: " + urlsInfo.size());
+                Img imgUrl = new Img(adrtmpDstNm,
+                        tmpDstNm,
+                        urlsInfo.get(0),
+                        urlsInfo.get(1),
+                        urlsInfo.get(2),
+                        urlsInfo.get(3));
+                dst.addImg(imgUrl);
+            }
 
-        // destinationRepository.save(dst);
-        // }
-        // return destinationRepository.findAll();
+            destinationRepository.save(dst);
+        }
+        return destinationRepository.findAll();
     }
 
     // 지역별 관광지 상위 10개 리턴과 상세페이지의 지역별 관광지 모두 리턴 만들기
