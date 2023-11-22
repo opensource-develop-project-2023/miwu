@@ -18,6 +18,8 @@ public interface ImgRepository extends JpaRepository<Img, Long> {
 
     List<Img> findByAdress1(String adress1); // 관광지 광역시/도 를 기반으로 조회
 
+    List<Img> findByMcategory(String mcategory);
+    
     List<Img> findByAdress1Like(String keyword);
     List<Img> findByDestNameLike(String keyword);
     List<Img> findByTagLike(String keyword);

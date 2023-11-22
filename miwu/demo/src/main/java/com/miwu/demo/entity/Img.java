@@ -48,13 +48,18 @@ public class Img {
     @Column(name = "adress1", nullable = false, length = 45)
     private String adress1;
 
+    // 중분류 카테고리
+    @Column(name = "m_category", nullable = false, length = 200)
+    private String mcategory;
+
     // 관광지 tag
     @Column(name = "tag", nullable = false, length = 2083)
     private String tag;
 
     // 생성자
-    public Img(String adress1, String destName, String url1, String url2, String url3, String tag) {
+    public Img(String adress1, String mcategory, String destName, String url1, String url2, String url3, String tag) {
         this.adress1 = adress1;
+        this.mcategory = mcategory;
         this.destName = destName;
         this.url1 = url1;
         this.url2 = url2;

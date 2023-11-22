@@ -117,4 +117,26 @@ public class DestinationController {
     }
 
     // 카테고리 별로 3개씩 관광지 데이터 다 보내기(전국.csv에서 읽어오는 것으로), 카테고리, 관광지 명만
+    @GetMapping("/img/categorytop3")
+    public List<Img> categorytop3Destination()
+            throws IOException {
+
+        List<Img> top3List = new ArrayList<Img>();
+
+        String categoryList[] = {"문화관광", "기타관광", "자연관광", "역사관광", "레저스포츠"};
+        List<Img> tmp_des_top = new ArrayList<Img>();
+        for(int i=0; i<5; i++){
+            tmp_des_top=imgRepository.findByMcategory(categoryList[i]);
+
+            if(tmp_des_top.size()>=3){ // 카테고리 별로 가져온 개수가 3개이상이어야 함
+                for (int k = 0; k < 3; k++) {
+                    top3List.add(tmp_des_top.get(k));
+                }
+            }
+        }
+        // 진행과정 확인용
+        System.out.println(top3List);
+
+        return top3List;
+    }
 }
