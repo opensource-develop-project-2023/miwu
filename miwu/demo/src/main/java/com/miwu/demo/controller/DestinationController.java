@@ -69,10 +69,12 @@ public class DestinationController {
 
             String adrtmpDstNm = getCsvInfo.get(i).get(1).toString();
             String tmpDstNm = getCsvInfo.get(i).get(3).toString();
+            String catDst = getCsvInfo.get(i).get(5).toString();
             List<String> urlsInfo = crawlingService.getImg(tmpDstNm);
             if (urlsInfo.size() >= 4) {
                 System.out.println("이미지 개수: " + urlsInfo.size());
                 Img imgUrl = new Img(adrtmpDstNm,
+                        catDst,
                         tmpDstNm,
                         urlsInfo.get(0),
                         urlsInfo.get(1),
