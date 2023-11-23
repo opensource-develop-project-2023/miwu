@@ -92,18 +92,18 @@ const SearchComponent = () => {
         </button>
       </div>
       <div className="result-list">
-        {loading && <p>로딩 중...</p>}
+        {loading && <p className="no-results">로딩 중...</p>}
         {!loading && searchResult.map((item, index) => (
           <div key={index} className="result-item">
-            <div className="card-content">
+            <div className="result-card-content">
               <div className="result-image-container">
               {(item.url1 || item.r_imgUrl) && <img src={item.url1 || item.r_imgUrl} alt={item.roadAdress} />}
             </div>
             </div>
-            <div className="details">
-              <p className="name">{item.destName || item.restName}</p>
-              <p className="addr">{item.restAdress || item.roadAdress} </p>
-              <p className="tag">{item.tag || item.restCategory}</p>
+            <div className="result-details">
+              <p className="result-name">{item.destName || item.restName}</p>
+              <p className="result-addr">{item.restAdress || item.roadAdress} </p>
+              <p className="result-tag">{item.tag || item.restCategory}</p>
             </div>
             </div>
         ))}
