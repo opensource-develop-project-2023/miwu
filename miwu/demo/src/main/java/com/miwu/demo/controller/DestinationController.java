@@ -50,7 +50,7 @@ public class DestinationController {
             throws CsvValidationException, IOException {
         // destinationRepository.deleteAllInBatch();
         // imgRepository.deleteAllInBatch();
-        String csvPath = ".miwu/demo/csv/";
+        String csvPath = "./miwu/demo/csv/";
 
         String csvname = csvPath + location + ".csv";
 
@@ -125,9 +125,9 @@ public class DestinationController {
 
         List<Img> top3List = new ArrayList<Img>();
 
-        String categoryList[] = {"문화관광", "기타관광", "자연관광", "역사관광", "레저스포츠"};
+        String categoryList[] = {"문화관광", "자연관광", "역사관광", "레저스포츠"};
         List<Img> tmp_des_top = new ArrayList<Img>();
-        for(int i=0; i<5; i++){
+        for(int i=0; i<4; i++){
             tmp_des_top=imgRepository.findByMcategory(categoryList[i]);
 
             if(tmp_des_top.size()>=3){ // 카테고리 별로 가져온 개수가 3개이상이어야 함
