@@ -8,11 +8,6 @@ plugins {
 group = 'com.miwu'
 version = '0.0.1-SNAPSHOT'
 
-application {
-    mainClassName = 'com.miwu.demo.DemoApplication'
-}
-
-
 java {
 	sourceCompatibility = '17'
 }
