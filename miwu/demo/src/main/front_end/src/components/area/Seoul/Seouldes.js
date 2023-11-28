@@ -55,7 +55,7 @@ const Seouldes = () => {
               <img src={destination[`url${currentImageIndex + 1}`]} alt={destination.roadAdress} />
             </div>
             <div className="details">
-              <p className="name">Name: {destination.destName}</p>
+              <p className="name"> {destination.destName}</p>
               <p className="tag">{destination.tag}</p>
             </div>
           </div>

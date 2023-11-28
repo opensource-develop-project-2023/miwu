@@ -21,7 +21,7 @@ function Header({loggedIn, logout, id}) {
                     </Link>
                 </div>
                 <div className="nav-item">
-                    <Link to="/theme">
+                    <Link to="/seoul">
                         <p>상세</p>
                     </Link>
                 </div>

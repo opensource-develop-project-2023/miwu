@@ -61,7 +61,7 @@ public class Destination {
 
     // 중분류 카테고리
     @Column(name = "m_category", nullable = false, length = 200)
-    private String m_category;
+    private String mcategory;
 
     // 소분류 카테고리
     @Column(name = "s_category", nullable = false, length = 200)
@@ -79,15 +79,20 @@ public class Destination {
     @JoinColumn(name = "adress1", insertable = false, updatable = false)
     private List<Img> img_adress1;
 
+    // 중분류 카테고리
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "m_category", insertable = false, updatable = false)
+    private List<Img> img_mcategory;
+
     // 생성자
     public Destination(String rank_number, String adress1, String adress2,
-            String destName, String roadAdress, String m_category, String s_category, String search_number) {
+            String destName, String roadAdress, String mcategory, String s_category, String search_number) {
         this.rank_number = rank_number;
         this.adress1 = adress1;
         this.adress2 = adress2;
         this.destName = destName;
         this.roadAdress = roadAdress;
-        this.m_category = m_category;
+        this.mcategory = mcategory;
         this.s_category = s_category;
         this.search_number = search_number;
     }
