@@ -5,7 +5,7 @@ plugins {
 }
 
 bootJar {
-    mainClassName = 'com.miwu.demo.DemoApplication'
+    mainClassName = 'miwu.demo.src.main.src.java.com.miwu.demo.DemoApplication'
 }
 
 group = 'com.miwu'
