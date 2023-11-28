@@ -29,9 +29,9 @@ const Incheonres = () => {
           <img src={restaurant.r_imgUrl} alt={restaurant.restName} />
         </div>
         <div className="restaurant-details">
-          <p className="name">Name: {restaurant.restName}</p>
-          <p className="address">Address: {restaurant.restAdress}</p>
-          <p className="category">Category: {restaurant.restCategory}</p>
+        <p className="name">{restaurant.restName}</p>
+          <p className="address">{restaurant.restAdress}</p>
+          <p className="category">{restaurant.restCategory}</p>
         </div>
       </div>
       <hr />
