@@ -17,6 +17,8 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Long> {
 
     UserInfo findByuserId(String userId); // 유저 아이디로 유저 조회
 
+    UserInfo findBypassword(String password); // 패스워드로 유저 조회
+
     List<UserInfo> findByuserName(String userName);
 
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제

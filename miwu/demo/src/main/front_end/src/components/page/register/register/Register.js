@@ -168,7 +168,6 @@ const Register = () => {
     const queryData = [
         new Query(1, "내가 좋아하는 여행지는?"),
         new Query(2, "내 고향은?"),
-        new Query(3, "테스트 질문"),
     ];
 
     const queryList = queryData.map((query) => (
