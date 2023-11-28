@@ -53,7 +53,7 @@ dependencies {
 }
 
 bootJar {
-    mainClassName = 'miwu.demo.src.main.src.java.com.miwu.demo.DemoApplication'
+    mainClassName = 'com.miwu.demo.DemoApplication'
 }
 
 tasks.named('test') {
