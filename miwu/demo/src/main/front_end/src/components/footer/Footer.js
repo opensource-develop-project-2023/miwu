@@ -56,7 +56,7 @@ export function Footer() {
         <div className='logo-with-label'>
                     <div className='footer-log'> 
             <img src={`${process.env.PUBLIC_URL}/img/logo1.png`} alt="불러오기 실패" />
-        <p className='label'>한국관광 데이터랩</p>
+        <p className='label'>한국관광데이터랩</p>
          </div>
         </div>
         </div>
