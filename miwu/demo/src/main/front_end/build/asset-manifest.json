@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/miwu/static/css/main.ef1bc105.css",
+    "main.css": "/miwu/static/css/main.208defb3.css",
     "main.js": "/miwu/static/js/main.db8b1ddc.js",
     "static/js/787.22edae46.chunk.js": "/miwu/static/js/787.22edae46.chunk.js",
     "static/media/NotoSansKR-Thin.ttf": "/miwu/static/media/NotoSansKR-Thin.3c76aeeeb0d5302e0042.ttf",
@@ -12,12 +12,12 @@
     "static/media/NotoSansKR-ExtraBold.ttf": "/miwu/static/media/NotoSansKR-ExtraBold.a30f1f0b3b461fff07a7.ttf",
     "static/media/NotoSansKR-Black.ttf": "/miwu/static/media/NotoSansKR-Black.3a04960e264ac5544a85.ttf",
     "index.html": "/miwu/index.html",
-    "main.ef1bc105.css.map": "/miwu/static/css/main.ef1bc105.css.map",
+    "main.208defb3.css.map": "/miwu/static/css/main.208defb3.css.map",
     "main.db8b1ddc.js.map": "/miwu/static/js/main.db8b1ddc.js.map",
     "787.22edae46.chunk.js.map": "/miwu/static/js/787.22edae46.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef1bc105.css",
+    "static/css/main.208defb3.css",
     "static/js/main.db8b1ddc.js"
   ]
 }
