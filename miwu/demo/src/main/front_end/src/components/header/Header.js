@@ -22,7 +22,7 @@ function Header({loggedIn, logout, id}) {
                 </div>
                 <div className="nav-item">
                     <Link to="/seoul">
-                        <p>상세</p>
+                        <p>상세페이지</p>
                     </Link>
                 </div>
                 <div className="nav-item">

@@ -79,7 +79,7 @@
 
 // 글자
 #App div{
-  max-width: 1200px;
+  max-width: 1500px;
   margin: auto;
 }
 // -------------------------------------------------------
@@ -98,9 +98,9 @@ font-weight: 500;
 line-height: 40px;
 letter-spacing: 0em;
 text-align: left;
-width: 72px;
+width: 79px;
 height: 40px;
-color: rgba(33, 150, 243, 1);
+color: black;
 
 }
 
@@ -137,10 +137,10 @@ li {
   padding: 15px;
   justify-content: space-between;
   background-color: white;
-  width :1200px;
+  width :1500px;
   height: 96px;
   border: 0px, 0px, 1px, 0px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 
 }
@@ -197,7 +197,7 @@ text-align: center;
   top: 1776px;
   padding: 20px, 0px, 20px, 0px;
   gap: 20px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 
 }
@@ -211,7 +211,7 @@ display: flex;
 }
 
 .copyright{
-width: 200px;
+width: 500px;
 height: 24px;
 font-family: Noto Sans KR;
 font-size: 16px;
@@ -243,7 +243,7 @@ height:50px
 }
 
 .parts-and-references{
-  width: 1200px;
+  width: 1500px;
 height: 212px;
 gap: 40px;
 background: rgba(33, 33, 33, 1);
@@ -251,7 +251,7 @@ background: rgba(33, 33, 33, 1);
 
 }
 .parts{
-  width:1,200px;
+  width:1500px;
 height:132px;
 padding: 0px, 130px, 0px, 130px;
 gap: 20px;
@@ -312,7 +312,7 @@ color: white;
 }
 
 .references{
-width: 1200px;
+width: 1500px;
 height: 40px;
 gap : 20px;
 display: flex;
@@ -359,11 +359,13 @@ margin-top: 10px;
 //----------------------banner
 .main-banner {
   position: relative;
-  width: 1200px;
+  width: 1500px;
   height: 320px;
   box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25) inset;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
+  background-position: center;
+  background-size: cover;
 }
 
 .main-banner-title {
@@ -475,7 +477,7 @@ p {
 
 p.name{
   font-weight: 700;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 p.description {
@@ -488,12 +490,12 @@ p.description {
 //--------------------
 
  .spotlist{
-width: 1200px;
+width: 1500px;
 height: auto;
 top: 456px;
 flex-direction: column;
 display: flex;
-max-width: 1200px;
+max-width: 1500px;
 margin: 0 auto;
 width: 100%;
 
@@ -728,12 +730,12 @@ width: 100%;
 //--------------------------------------------------------
 //지역목록
 .area{
-  width: 1200px;
+  width: 1500px;
   height: 500px;
   top: 456px;
   padding: 0px, 38px, 80px, 38px;
   flex-direction: column;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   }
 
@@ -777,7 +779,7 @@ width: 100%;
 
 //-------
 .restaurant-list-header{
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex; 
   flex-direction: column; 
@@ -798,7 +800,7 @@ width: 100%;
   flex-wrap: wrap; 
   justify-content: space-between; 
   margin-top: 100px;
-  max-width: 1200px;
+  max-width: 1500px;
       margin: 0 auto;
 }
 
@@ -810,6 +812,8 @@ width: 100%;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
+
+
 }
 
     
@@ -832,8 +836,8 @@ width: 100%;
     }
     
     .restaurant-image-container img {
-      width: 150px;
-      height: 150px;
+      width: 180px;
+      height: 180px;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -842,9 +846,10 @@ width: 100%;
     .name,
     .address,
     .category {
-      font-size: 14px;
+      font-size: 18px;
       margin: 5px 0;
     }
+
     
     .load-more-container {
       width: 100%;
@@ -896,7 +901,7 @@ width: 100%;
   display: flex;
   flex-wrap: wrap;
 
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -922,7 +927,7 @@ width: 100%;
 }
 
 .area-top10 {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex; 
   flex-direction: column; 
@@ -955,7 +960,7 @@ width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1200px;
+    max-width: 1500px;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -992,7 +997,7 @@ width: 100%;
   padding-bottom: 30px;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -1054,7 +1059,7 @@ width: 100%;
   flex-wrap: wrap; 
   gap:10px;
   margin-top: 100px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
@@ -1087,8 +1092,8 @@ width: 100%;
 
       img {
         border-radius: 8px;
-        width: 100%;
-        height: 130px; /* 세로 길이를 키움 */
+        width: 200px;
+        height: 200px; /* 세로 길이를 키움 */
         object-fit: cover;
       }
     }

@@ -62,10 +62,6 @@ public class UserInfo {
         return userId;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -74,16 +70,8 @@ public class UserInfo {
         return userName;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
     public String getQuestion() {
         return question;
-    }
-
-    public void setAnswer(String answer) {
-        this.answer = answer;
     }
 
     public String getAnswer() {

@@ -5,7 +5,6 @@ const ImgTest = (props) => {
     return (
         <div className="ImgTest"> 
            <div className='main-banner' style={{ backgroundImage: `url(${process.env.PUBLIC_URL + '/img/banner.png'})`}}>
-
           <div className="main-banner-title">
           <span>가득 내려앉은 함박눈이 아름다운</span>
       
