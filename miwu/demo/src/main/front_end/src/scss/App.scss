@@ -211,7 +211,7 @@ display: flex;
 }
 
 .copyright{
-width: 196px;
+width: 200px;
 height: 24px;
 font-family: Noto Sans KR;
 font-size: 16px;
@@ -314,40 +314,43 @@ color: white;
 .references{
 width: 1200px;
 height: 40px;
-padding: 0px, 130px, 0px, 130px;
-gap: 36px;
+gap : 20px;
 display: flex;
 margin-left: 100px;
 margin-top: 30px;
 }
 
 .logo-with-label{
-width:174px;
+width:178px;
 height:40px;
 gap: 12px;
 
 }
 
 .footer-logo{
-  width: 40px;
-height: 40px;
+ 
 background: rgba(33, 33, 33, 1);
 
 }
+
+.footer-log img{
+width: 45px;
+height: 45px;
+}
+
 .Vector{
-  width: 40px;
+width: 40px;
 height: 40px;
 
 }
 
 .label{
-  width: 122px;
+width: 120px;
 height: 24px;
 font-family: Noto Sans KR;
-font-size: 16px;
+font-size: 14px;
 font-weight: 500;
 line-height: 23px;
-letter-spacing: 0em;
 text-align: left;
 color: white;
 float: right;
