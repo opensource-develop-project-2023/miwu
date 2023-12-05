@@ -56,7 +56,7 @@ const InfoInput = (props) => {
                 {
                     (props.name == "password") ? 
                         <div>
-                        <button id="change" className="btn btn-primary" onClick={() => props.change()}>변경하기</button> 
+                            <button id="check-repetition" className="btn btn-primary" onClick={() => function(){}}>변경하기</button> 
                         </div>
                     : <></>
                 }

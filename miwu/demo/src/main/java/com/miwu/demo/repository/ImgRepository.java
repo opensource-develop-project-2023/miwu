@@ -26,7 +26,7 @@ public interface ImgRepository extends JpaRepository<Img, Long> {
     boolean existsByDestNameLike(String keyword);
 
     @Transactional
-    @Query(value = "SELECT * FROM Img WHERE dest_name LIKE CONCAT('%', :searchValue, '%') OR adress1 LIKE CONCAT('%', :searchValue, '%') OR tag LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM img WHERE dest_name LIKE CONCAT('%', :searchValue, '%') OR adress1 LIKE CONCAT('%', :searchValue, '%') OR tag LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
     List<Img> findBySearchValue(@Param("searchValue") String searchValue);
 
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제

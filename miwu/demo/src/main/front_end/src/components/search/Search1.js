@@ -44,7 +44,7 @@ const SearchComponent = () => {
   const handleSearch = () => {
     setLoading(true);
 
-    const apiUrl = `/search?keyword=${encodeURIComponent(keyword)}&searchType=${encodeURIComponent(searchType)}`;
+    const apiUrl = `/api/search?keyword=${encodeURIComponent(keyword)}&searchType=${encodeURIComponent(searchType)}`;
     axios
       .get(apiUrl)
       .then((response) => {

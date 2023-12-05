@@ -80,8 +80,8 @@ public class RestaurantController {
             throws IOException {
         List<Restaurant> res1 = restaurantRepository.findByAdress1(adress);
 
-        // 진행과정 확인용
-        System.out.println(res1);
+        // // 진행과정 확인용
+        // System.out.println(res1);
 
         return res1;
     }

@@ -95,8 +95,8 @@ public class DestinationController {
             throws IOException {
         List<Img> img_detail = imgRepository.findByAdress1(location);
 
-        // 진행과정 확인용
-        System.out.println(img_detail);
+        // // 진행과정 확인용
+        // System.out.println(img_detail);
 
         return img_detail;
     }
@@ -112,8 +112,8 @@ public class DestinationController {
             top10List.add(tmp_des_top.get(i));
         }
 
-        // 진행과정 확인용
-        System.out.println(top10List);
+        // // 진행과정 확인용
+        // System.out.println(top10List);
 
         return top10List;
     }
@@ -136,8 +136,8 @@ public class DestinationController {
                 }
             }
         }
-        // 진행과정 확인용
-        System.out.println(top3List);
+        // // 진행과정 확인용
+        // System.out.println(top3List);
 
         return top3List;
     }

@@ -19,7 +19,7 @@ public interface RestaurantRepository extends JpaRepository<Restaurant, Long> {
     List<Restaurant> findByAdress1(String adress1); // 관광지 광역시/도 를 기반으로 조회
 
     @Transactional
-    @Query(value = "SELECT * FROM Restaurant WHERE r_name LIKE CONCAT('%', :searchValue, '%') OR r_adress LIKE CONCAT('%', :searchValue, '%') OR r_category LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
+    @Query(value = "SELECT * FROM restaurant WHERE r_name LIKE CONCAT('%', :searchValue, '%') OR r_adress LIKE CONCAT('%', :searchValue, '%') OR r_category LIKE CONCAT('%', :searchValue, '%')", nativeQuery = true)
     List<Restaurant> findBySearchValue(@Param("searchValue") String searchValue);
 
     void deleteAllInBatch(); // 조건없이 테이블의 전체 레코드 삭제

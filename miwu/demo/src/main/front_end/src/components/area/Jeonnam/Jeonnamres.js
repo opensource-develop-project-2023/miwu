@@ -30,7 +30,7 @@ const Jeonnamres = () => {
         </div>
         <div className="restaurant-details">
         <p className="name">{restaurant.restName}</p>
-          <p className="address">{restaurant.restAdress}</p>
+          <p className="address"> {restaurant.restAdress}</p>
           <p className="category">{restaurant.restCategory}</p>
         </div>
       </div>
