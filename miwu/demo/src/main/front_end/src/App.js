@@ -52,7 +52,7 @@ function App() {
     return ( 
         <div className="App">
 
-            <BrowserRouter basename="/miwu/">
+            <BrowserRouter>
                 <Header loggedIn={LoggedIn} logout={logout} id={UserId} />  
                 <Routes>
                     <Route path="/" element={<Home />} />  

@@ -39,24 +39,28 @@ export function Footer() {
                  </div>
          
                 <div className='references'>
-         
-      
+                    <div className='logo-with-label'>
+                    <div className='footer-log'> 
+            <img src={`${process.env.PUBLIC_URL}/img/logo1.png`} alt="불러오기 실패" />
+        <p className='label'>한국관광 데이터랩</p>
+         </div>
+        </div>
+        <div className='logo-with-label'>
+                    <div className='footer-log'> 
+            <img src={`${process.env.PUBLIC_URL}/img/logo2.png`} alt="불러오기 실패" />
+        <p className='label'>OpenAI</p>
+         </div>
+        </div>
+        <div className='logo-with-label'>
+                    <div className='footer-log'> 
+            <img src={`${process.env.PUBLIC_URL}/img/logo3.png`} alt="불러오기 실패" />
+        <p className='label'>chatgpt-java</p>
+         </div>
+        </div>
         <div className='logo-with-label'>
                     <div className='footer-log'> 
             <img src={`${process.env.PUBLIC_URL}/img/logo4.png`} alt="불러오기 실패" />
         <p className='label'>bootstrap</p>
-         </div>
-        </div>
-        <div className='logo-with-label'>
-                    <div className='footer-log'> 
-            <img src={`${process.env.PUBLIC_URL}/img/mysql.png`} alt="불러오기 실패" />
-        <p className='label'>Mysql</p>
-         </div>
-        </div>
-        <div className='logo-with-label'>
-                    <div className='footer-log'> 
-            <img src={`${process.env.PUBLIC_URL}/img/logo1.png`} alt="불러오기 실패" />
-        <p className='label'>한국관광데이터랩</p>
          </div>
         </div>
         </div>

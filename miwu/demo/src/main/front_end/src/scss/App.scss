@@ -100,7 +100,7 @@ letter-spacing: 0em;
 text-align: left;
 width: 72px;
 height: 40px;
-color: black;
+color: rgba(33, 150, 243, 1);
 
 }
 
@@ -211,7 +211,7 @@ display: flex;
 }
 
 .copyright{
-width: 200px;
+width: 196px;
 height: 24px;
 font-family: Noto Sans KR;
 font-size: 16px;
@@ -278,7 +278,7 @@ color: white;
 
 }
 .member-infos{
-  width: 310px;
+  width: 300px;
 height: 48px;
 padding: 12px;
 border: 1px;
@@ -288,7 +288,7 @@ border: 1px solid rgba(255, 255, 255, 1);
 }
 
 .member-infos2{
-  width: 310px;
+  width: 300px;
   height: 84px;
   padding: 12px;
   border: 1px;
@@ -302,7 +302,7 @@ border: 1px solid rgba(255, 255, 255, 1);
 width: 244px;
 height: 24px;
 font-family: Noto Sans KR;
-font-size: 15px;
+font-size: 16px;
 font-weight: 400;
 line-height: 23px;
 letter-spacing: 0em;
@@ -314,43 +314,40 @@ color: white;
 .references{
 width: 1200px;
 height: 40px;
-gap : 20px;
+padding: 0px, 130px, 0px, 130px;
+gap: 36px;
 display: flex;
 margin-left: 100px;
 margin-top: 30px;
 }
 
 .logo-with-label{
-width:178px;
+width:174px;
 height:40px;
 gap: 12px;
 
 }
 
 .footer-logo{
- 
+  width: 40px;
+height: 40px;
 background: rgba(33, 33, 33, 1);
 
 }
-
-.footer-log img{
-width: 45px;
-height: 45px;
-}
-
 .Vector{
-width: 40px;
+  width: 40px;
 height: 40px;
 
 }
 
 .label{
-width: 120px;
+  width: 122px;
 height: 24px;
 font-family: Noto Sans KR;
-font-size: 14px;
+font-size: 16px;
 font-weight: 500;
 line-height: 23px;
+letter-spacing: 0em;
 text-align: left;
 color: white;
 float: right;

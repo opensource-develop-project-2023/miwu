@@ -49,7 +49,7 @@ const Recommend = () => {
 
   return (
     <div className="recommend-top3">
-      <h2>카테고리별 추천 관광지</h2>
+      <h2>추천 관광지</h2>
       {categories.map((category, categoryIndex) => (
         
         <div key={categoryIndex}>

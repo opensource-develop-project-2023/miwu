@@ -24,12 +24,21 @@ h1 {
 }
 
 // 중복 체크(버튼)
-.info-input button#change {
+.info-input button#check-repetition {
     width: 120px;
     padding: 8px;
     height: 44px;
-}
 
+}
+// 비밀번호 숨김 영역(버튼)
+.info-input div.hide-eye {
+    width: 24px;
+    height: 24px;
+
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
 
 // 입력하는 곳
 .info-input .input-div input {
@@ -43,9 +52,5 @@ h1 {
 
 .info-input .condition {
     margin-top: 12px;
-}
-
-.input-div #change {
-    width: 100px;
 }
 
