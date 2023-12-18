@@ -53,7 +53,7 @@ const Recommend = () => {
       {categories.map((category, categoryIndex) => (
         
         <div key={categoryIndex}>
-        <p className="recommend-name">
+        <p className="recommen-category-name">
                      {topDestinations[currentSlide * 3 ].mcategory}
                         </p>
           <div className="recommend-list">

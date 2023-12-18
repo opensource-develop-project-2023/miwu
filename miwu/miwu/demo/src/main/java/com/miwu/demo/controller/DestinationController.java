@@ -50,13 +50,13 @@ public class DestinationController {
             throws CsvValidationException, IOException {
         // destinationRepository.deleteAllInBatch();
         // imgRepository.deleteAllInBatch();
-        String csvPath = "./miwu/demo/csv/";
+        String csvPath = "./miwu/miwu/demo/csv/";
 
         String csvname = csvPath + location + ".csv";
 
         ArrayList<ArrayList<String>> getCsvInfo = csvService.getCsv(csvname);
-
-        for (int i = 0; i < getCsvInfo.size(); i++) {
+        int maxDataCount = 30;
+        for (int i = 0; i < Math.min(getCsvInfo.size(), maxDataCount); i++) {
             Destination dst = new Destination(
                     getCsvInfo.get(i).get(0).toString(),
                     getCsvInfo.get(i).get(1).toString(),
@@ -84,6 +84,11 @@ public class DestinationController {
             }
 
             destinationRepository.save(dst);
+
+            // 30개 이상 저장되면 더 이상 저장하지 않도록
+            if (i >= maxDataCount - 1) {
+                break;
+            }
         }
         return destinationRepository.findAll();
     }

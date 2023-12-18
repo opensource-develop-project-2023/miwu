@@ -18,7 +18,7 @@ const arealist = () => {
           <div className="slider">
     
   
-        <div className='capital-area'>
+        <div className='area-container'>
         <Link to="/seoul" className="area-item">
             <img src={process.env.PUBLIC_URL + '/img/seoul.jpg'} />
            <span>서울</span>
@@ -26,14 +26,14 @@ const arealist = () => {
            </div>
     
 
-           <div className='capital-area'>
+           <div className='area-container'>
            <Link to="/gyeonggi-do" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/gyeonggi.jpg'} />
            <span>경기</span>
            </Link>
            </div>
            
-           <div className='capital-area'>
+           <div className='area-container'>
            <Link to="/incheon" className="area-item">
            <img src={process.env.PUBLIC_URL + '/img/incheon.jpg'} />
            <span>인천</span>
@@ -48,26 +48,26 @@ const arealist = () => {
        </div>
        <div className="slider">
     
-    <div className='chungcheong'>
+    <div className='area-container'>
     <Link to="/daejon" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/daejon.jpg'} />
            <span>대전</span>
            </Link>
     </div>
-    <div className='chungcheong'>
+    <div className='area-container'>
     <Link to="/chungnam" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/chungnam.jpg'} />
            <span>충남</span>
            </Link>
     </div>
-    <div className='chungcheong'>
+    <div className='area-container'>
      <Link to="/chungbuk" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/chungbuk.jpg'} />
            <span>충북</span>
            </Link>
     </div>
   
-    <div className='chungcheong'>
+    <div className='area-container'>
     <Link to="/sejong" className="area-item">
            <img src={process.env.PUBLIC_URL + '/img/sejong.jpg'} />
            <span>세종</span>
@@ -80,7 +80,7 @@ const arealist = () => {
        </div>
        <div className="slider">
     
-    <div className='gyeongsang'>
+    <div className='area-container'>
     <Link to="/busan" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/busan.jpg'} />
            <span>부산</span>
@@ -88,28 +88,28 @@ const arealist = () => {
     </div>
 
     
-    <div className='gyeongsang'>
+    <div className='area-container'>
     <Link to="/ulsan" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/ulsan.jpg'} />
            <span>울산</span>
            </Link>
            </div>
            
-           <div className='gyeongsang '>
+           <div className='area-container '>
            <Link to="/daegu" className="area-item">
            <img src={process.env.PUBLIC_URL + '/img/daegu.jpg'} />
            <span>대구</span>
            </Link>
            </div>
         
-           <div className='gyeongsang '>
+           <div className='area-container'>
            <Link to="/gyeongnam" className="area-item">
            <img src={process.env.PUBLIC_URL + '/img/gyeongnam.jpg'} />
            <span>경남</span>
            </Link>
            </div>
 
-           <div className='gyeongsang'>
+           <div className='area-container'>
            <Link to="/gyeongbuk" className="area-item">
            <img src={process.env.PUBLIC_URL + '/img/gyeongbuk.jpg'} />
            <span>경북</span>
@@ -122,19 +122,19 @@ const arealist = () => {
        </div>
        <div className="slider">
     
-    <div className='honam'>
+    <div className='area-container'>
     <Link to="/gwangju" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/gwangju.jpg'} />
            <span>광주</span>
            </Link>
     </div>
-    <div className='honam'>
+    <div className='area-container'>
     <Link to="/jeonnam" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/jeonnam.jpg'} />
            <span>전남</span>
            </Link>
     </div>
-    <div className='honam'>
+    <div className='area-container'>
     <Link to="/jeonbuk" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/jeonbuk.jpg'} />
            <span>전북</span>
@@ -147,7 +147,7 @@ const arealist = () => {
        </div>
        <div className="slider">
     
-    <div className='gangwon'>
+    <div className='area-container'>
     <Link to="/gangwon" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/gangwon.jpg'} />
            <span>강원</span>
@@ -159,7 +159,7 @@ const arealist = () => {
        </div>
        <div className="slider">
     
-    <div className='jeju'>
+    <div className='area-container'>
     <Link to="/jeju" className="area-item">
     <img src={process.env.PUBLIC_URL + '/img/jeju.jpg'} />
            <span>제주</span>

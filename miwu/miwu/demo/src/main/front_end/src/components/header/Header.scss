@@ -94,6 +94,10 @@ a[href="/login"] {
     margin-top: 55px;
     color: black;
     font-weight: bold;
+
+    &:hover {
+        color: #000069; // 예시: 텍스트 색상 변경
+      }
 }
 
 #logout {

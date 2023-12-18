@@ -76,7 +76,18 @@
   font-style: normal;
 }
 
-
+@font-face {
+  font-family: 'SOYOMapleBoldTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'omyu_pretty';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/omyu_pretty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 // 글자
 #App div{
   max-width: 1500px;
@@ -104,9 +115,7 @@ color: black;
 
 }
 
-p {
-  font-weight: 400;
-}
+
 
 a { // Link 태그 밑줄 제거
   text-decoration: none;
@@ -466,19 +475,10 @@ div.card-slide ul li:nth-child(n) {
 // -------------------------------------------------------
 // 카드
 // -------------------------------------------------------
-div.card {
-  padding: 20px;
-  border: 1px solid black;  
-}
 
-p {
-  font-size: 30px;
-}
 
-p.name{
-  font-weight: 700;
-  font-size: 17px;
-}
+
+
 
 p.description {
   font-weight: 400;
@@ -498,7 +498,7 @@ display: flex;
 max-width: 1500px;
 margin: 0 auto;
 width: 100%;
-
+margin-bottom: 100px;
 
 
  
@@ -513,7 +513,7 @@ width: 100%;
   position: relative;
 }
 
-.chungcheong {
+.area-container {
   width: 200px;
   height: 300px;
   margin-left: 33px;
@@ -521,176 +521,7 @@ width: 100%;
   object-fit: cover;
   position: relative;
 
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    z-index: 1;
-  }
 
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%; // 가운데 정렬
-    transform: translateX(-50%); // 가운데 정렬
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-    z-index: 2;
-  }
-}
-
-
-
-.capital-area {
-  width: 200px;
-  height: 300px;
-  margin-left: 33px;
-  display: block;
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    object-fit: cover;
-    z-index: 1;
-  }
-
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-    z-index: 2;
-  }
-}
-
-.gyeongsang {
-  width: 200px;
-  height: 300px;
-  margin-left: 33px;
-  display: block;
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    object-fit: fill;
-  }
-
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%; 
-    transform: translateX(-50%);
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-  }
-}
-
-.honam {
-  width: 200px;
-  height: 300px;
-  margin-left: 33px;
-  display: block;
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    object-fit: fill;
-  }
-
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%; 
-    transform: translateX(-50%);
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-  }
-}
-
-.jeju {
-  width: 200px;
-  height: 300px;
-  margin-left: 33px;
-  display: block;
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    object-fit: fill;
-  }
-
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%; 
-    transform: translateX(-50%);
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-  }
-}
-
-.gangwon {
-  width: 200px;
-  height: 300px;
-  margin-left: 33px;
-  display: block;
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    border-radius: 30px;
-    object-fit: fill;
-  }
-
-  span {
-    position: absolute;
-    top: 230px;
-    left: 75%; 
-    transform: translateX(-50%);
-    color: white;
-    font-size: 23px;
-    letter-spacing: 0em;
-    text-align: left;
-    -webkit-text-stroke-width: 1px;
-  }
 }
 
 
@@ -702,30 +533,52 @@ width: 100%;
   text-decoration: none;
   color: #333;
   transition: transform 0.3s ease-in-out;
-	width:100%;
-	height:100%;
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
-
-
+  overflow: hidden; // 이미지에서 뚜렷한 효과를 위해 추가
 
   img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
     margin-bottom: 10px;
-    display:block;
-    width:100%;
-    height:100%;
-    position :relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
     border-radius: 30px;
-   
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3); /* 입체적인 그림자 효과 */
+    /* 추가된 부분: box-shadow에 z-axis 값 추가 */
+  
   }
 
-
+  span {
+    position: absolute;
+    top: 85%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+    -webkit-text-stroke-width: 1px;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5); // 배경색 투명도 추가
+    padding: 7px;
+    border-radius: 5px; // border-radius 추가 
   
+    
+  }
 
-  
+  &:hover {
+    transform: scale(1.05); // 호버 시 확대 효과
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // 그림자 효과 추가
+    
+  }
 }
+
 
 //--------------------------------------------------------
 //지역목록
@@ -750,9 +603,10 @@ width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  font-family: 'omyu_pretty';
   }
   .area-list p{
-    font-size: 25px;
+    font-size: 30px;
     color:gray;
     flex-direction: column;
   }
@@ -764,6 +618,7 @@ width: 100%;
     text-align: center;
     -webkit-text-stroke-width: 1px;
     position: relative;
+   
     
 
 
@@ -774,6 +629,7 @@ width: 100%;
     color: black;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     margin: 0;
+    font-family: SOYOMapleBoldTTF;
   }
 }
 
@@ -785,6 +641,7 @@ width: 100%;
   flex-direction: column; 
   align-items: center; 
   padding-top: 100px;
+ 
 }
 
 
@@ -793,6 +650,7 @@ width: 100%;
   color: #333; 
   margin-bottom: 30px; 
   font-size: 36px;
+  font-family: SOYOMapleBoldTTF;
 }
 
 .restaurant-list {
@@ -802,6 +660,10 @@ width: 100%;
   margin-top: 100px;
   max-width: 1500px;
       margin: 0 auto;
+  margin-bottom: 100px;
+
+  
+ 
 }
 
 .card {
@@ -810,7 +672,7 @@ width: 100%;
   padding: 10px;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s;
 
 
@@ -843,10 +705,15 @@ width: 100%;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     
-    .name,
+    .res-name{
+      font-size: 20px;
+      margin: 5px 0;
+      font-family: SOYOMapleBoldTTF;
+    }
+
     .address,
     .category {
-      font-size: 18px;
+      font-size: 16px;
       margin: 5px 0;
     }
 
@@ -894,13 +761,14 @@ width: 100%;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s;
+
 }
 
 
 .destination-list {
   display: flex;
   flex-wrap: wrap;
-
+  
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -919,11 +787,18 @@ width: 100%;
 
 .details {
   margin-top: 10px;
+ 
+  font-size: 18px;
 }
 
 
 .tag {
   font-size: 12px;
+}
+.des_name{
+  font-size: 17px;
+  font-family: SOYOMapleBoldTTF;
+  
 }
 
 .area-top10 {
@@ -939,11 +814,12 @@ width: 100%;
 
 
 .area-top10 h2 {
-  
+  font-family: SOYOMapleBoldTTF;
   color: #333; 
   margin-bottom: 10px; 
   font-size: 36px; 
-  margin-bottom: 30px; 
+  margin-bottom: 40px; 
+  margin-top:40px
 
 }
 //-------
@@ -1075,9 +951,7 @@ width: 100%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+ 
 
   .result-card-content {
     flex: 1;
@@ -1106,14 +980,14 @@ width: 100%;
     justify-content: center;
 
     .result-name {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
       margin-bottom: 5px;
     }
 
     .result-addr,
     .result-tag {
-      font-size: 14px;
+      font-size: 16px;
       color: #555;
     }
   }
@@ -1144,9 +1018,9 @@ width: 100%;
 
 .recommend-top3 {
   text-align: center;
-
+  font-family: SOYOMapleBoldTTF;
   h2 {
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
   }
 
@@ -1200,6 +1074,9 @@ width: 100%;
   }
 }
 
+.recommen-category-name{
+  font-size: 23px;
+}
 
 
   

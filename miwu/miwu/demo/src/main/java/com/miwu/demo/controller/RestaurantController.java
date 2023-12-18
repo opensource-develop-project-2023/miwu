@@ -52,19 +52,24 @@ public class RestaurantController {
 
             for (int i = 0; i < resAdr.size(); i = i + 4) {
                 if (resAdr.size() != 0) {
-                    Restaurant res = new Restaurant(r_tmpAdr,
-                            resAdr.get(i).toString(),
-                            resAdr.get(i + 1).toString(),
-                            resAdr.get(i + 2).toString(),
-                            resAdr.get(i + 3).toString());
-                    // 저장?
-                    restaurantRepository.save(res);
+                    String name = (resAdr.get(i) != null) ? resAdr.get(i).toString() : "";
+                    String address = (resAdr.get(i + 1) != null) ? resAdr.get(i + 1).toString() : "";
+                    String category = (resAdr.get(i + 2) != null) ? resAdr.get(i + 2).toString() : "";
+                    String imgUrl = (resAdr.get(i + 3) != null) ? resAdr.get(i + 3).toString() : "";
+            
+                    if (!imgUrl.isEmpty()) {
+                        Restaurant res = new Restaurant(r_tmpAdr, name, address, category, imgUrl);
+                        // 저장
+                        restaurantRepository.save(res);
+                    }
+               
                 }
-                if ((i + 4) == resAdr.size()) { // 배열범위를 넘어서는 것을 방지
+                if ((i + 4) == resAdr.size()) { // 배열 범위를 넘어서는 것을 방지
                     break;
                 }
-
             }
+            
+          
         }
         return restaurantRepository.findAll();
     }

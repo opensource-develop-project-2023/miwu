@@ -26,12 +26,14 @@ const HintSelect = (props) => {
                 <input      
                     type="text"
                     name="answer"
+                    value={props.answer}
                     placeholder="답변을 입력해주세요"
                     onChange={(event) => props.answerHandler(event)}
                 />
             </div>
+            <button id="change" className="btn btn-primary" onClick={() => props.change()}>변경하기</button> 
         </div>
     );
 }
 
-export default HintSelect;
+export default HintSelect; 

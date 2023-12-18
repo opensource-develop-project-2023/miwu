@@ -30,7 +30,7 @@ const Gwangjures = () => {
           <img src={restaurant.r_imgUrl} alt={restaurant.restName} />
         </div>
         <div className="restaurant-details">
-        <p className="name">{restaurant.restName}</p>
+        <p className="res-name">{restaurant.restName}</p>
           <p className="address"> {restaurant.restAdress}</p>
           <p className="category">{restaurant.restCategory}</p>
         </div>
